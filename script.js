@@ -10,6 +10,9 @@ function Main() {
   let creatureSize = CreatureSize(creatureType[0], creatureType[1])
   //gets the alignment of a creature based off the crature type
   let alignment = Alignment(creatureType[0])
+  //gets the ability scores for the creature
+  let abilityScores = AbilityScores(creatureType[0], creatureSize)
+  console.log(abilityScores)
   
   //temp code to display creature on console
   TempDisplay(creatureName, creatureSize, creatureType[0], alignment)
@@ -78,7 +81,7 @@ function CreatureSize(creatureType, secondaryType) {
   //returns the creature size
   return creatureSize
 }
-//Stes the allignment of the creature
+//Sets the allignment of the creature
 function Alignment(creatureType) {
   //intialize alignment var
   let alignment = ``
@@ -87,6 +90,37 @@ function Alignment(creatureType) {
     alignment = `Neutral`
   }
   return alignment
+}
+//Sets the ability score of the creature
+function AbilityScores(creatureType, creatureSize) {
+  /*This part of the code works by calling a function based off of the type of creature, and the function creates a value based off of the size and type of the creature*/
+  //initializes all of the ablility scores to 0
+  let abilityScores = [0, 0, 0, 0, 0, 0]
+  if (creatureType == `Beast`) {
+    BeastScores()
+  }
+
+  //Returns everything
+  return abilityScores
+
+
+  
+  //functions for findings size of creature types
+  function BeastScores() {
+    //STR
+    if (creatureSize == `Tiny`) {
+      abilityScores[0] = StrTiny()
+    }
+  }
+
+  
+  //function for finding size of a small creature
+  function StrTiny() {
+    let tempScore = 2 + Math.floor(Math.random() * 6)
+    return tempScore
+  }
+
+  
 }
 
 //A function to temp display what has been generated

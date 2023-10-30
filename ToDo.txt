@@ -2,5 +2,5 @@
 - Get Types (Done for Beasts)
 - Make name system (Done for Beasts)
 - Size (Done for Beasts)
-- Allignment 
+- Allignment (Done for Beasts)
 - Ability Scores
