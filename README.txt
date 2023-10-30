@@ -1,0 +1,22 @@
+#Things to have
+- Names
+- Alignment
+- Challenge Rating
+- Size
+- Types (Creature or Swarm)
+  - Aberration
+  - Beast
+  - Celestial
+  - Construct
+  - Dragon
+  - Elemental
+  - Fey
+  - Fiend
+  - Giant
+  - Humanoid
+  - MOntrocsity
+  - Ooze
+  - Plant
+  - Undead
+  - (Random)
+  
