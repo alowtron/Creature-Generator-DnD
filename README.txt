@@ -1,7 +1,7 @@
 #Things to have
 - Names
 - Alignment
-- Challenge Rating
+- Challenge Rating-(Temp Done)
 - Size
 - Types (Creature or Swarm)
   - Aberration
