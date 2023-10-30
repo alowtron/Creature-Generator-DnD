@@ -9,6 +9,7 @@
   - Celestial
   - Construct
   - Dragon
+    -Colors (Add colors below here later)
   - Elemental
   - Fey
   - Fiend
@@ -19,4 +20,111 @@
   - Plant
   - Undead
   - (Random)
-  
+- Speed
+- Burrow (optional)
+- Climb (optional)
+- Fly (optional)
+- Swim (optional)
+- Senses (optional)
+  - Blindsight
+  - Darkvision
+  - TremorSense
+  - Truesight
+- Languages
+- Ability Scores
+  - STR
+  - DEX
+  - CON
+  - INT
+  - WIS
+  - CHA
+- Saving Throws
+  - STR
+  - DEX
+  - CON
+  - INT
+  - WIS
+  - CHA
+- Skills (Prof./Expert)
+  - Acrobatics (DEX)
+  - Animal Handling (WIS)
+  - Arcana (INT)
+  - Athletics (STR)
+  - Deception (CHA)
+  - History (INT)
+  - Insight (WIS)
+  - Initmidation (CHA)
+  - Investigation (INT)
+  - Medicine (WIS)
+  - Nature (INT)
+  - Perception (WIS)
+  - Performance (CHA)
+  - Religion (Sleight of Hand)
+  - Stealth (DEX)
+  - Survival (WIS)
+- Passive Perception (Goes in Senses)
+- Armor Class
+  - Unarmored
+  - Armor from....
+  - Conditional Armor
+- Hit Points
+  - Hit Points Formula
+  - Hit Points Average
+- Damage Vlnerabilities
+  - Acid
+  - Bludgeoning
+  - Cold
+  - Fire
+  - Force
+  - Lighting
+  - Necrotic
+  - Piercing
+  - Poison
+  - Psychic
+  - Radiant
+  - Slashing
+  - Thunder
+  - Other
+- Damage Resistances  - Acid
+  - Bludgeoning
+  - Cold
+  - Fire
+  - Force
+  - Lighting
+  - Necrotic
+  - Piercing
+  - Poison
+  - Psychic
+  - Radiant
+  - Slashing
+  - Thunder
+  - Other
+- Condition Immunities (Add in Species Specific List later on)
+  - Blinded
+  - Charmed
+  - Deafened
+  - Exhaustion
+  - Frightened
+  - Grappled
+  - Incapcitated
+  - Invisible
+  - Paralyzed
+  - Petrified
+  - Poisoned
+  - Prone
+  - Restrained
+  - Stunned
+  - Unconscious
+  - Other
+- Spelllcasing
+- Traits (Find out what this is for)
+- Actions Intro (Certain Actions add stuff here?)
+- Actions
+- Bunos Actions Intro (Certain Bunus Actions add stuff here?)
+- Bonus Actions
+- Reactions Intro (Certain Reactions add stuff here?)
+- Reactions
+- Legendary Action Count
+- Legendary Action Intro (Certain Legendary Actions add stuff here?)
+- Legendary Actions
+- Envireonment
