@@ -6,6 +6,11 @@ function Main() {
   let creatureType = CreatureType()
   //assings a name based off of crature type
   let creatureName = CreatureName(creatureType[0])
+  //gets the size of the creature based off the creature type
+  let creatureSize = CreatureSize(creatureType[0], creatureType[1])
+  
+  //temp code to display creature on console
+  TempDisplay(creatureName, creatureSize, creatureType[0])
 }
 //Sets the challenge rating
 function ChallengeRating() {
@@ -49,9 +54,32 @@ function CreatureName(creatureType) {
     let nameVar1 = nameVarsConst[Math.floor(Math.random() * nameVarsConst.length)]
     let nameVar2 = nameVarsVowels[Math.floor(Math.random() * nameVarsVowels.length)]
     let nameVar3 = nameVarsConst[Math.floor(Math.random() * nameVarsConst.length)]
-    creatureName = nameVar1 + nameVar2 + nameVar3
-    console.log(creatureName)
+    creatureName = nameVar1.toUpperCase() + nameVar2 + nameVar3
   }
   return creatureName
+}
+//Sets the size of the creature
+function CreatureSize(creatureType, secondaryType) {
+  //initializes creatures size var
+  let creatureSize = ``
+  //sets creature type if {creatureType} is beast
+  if (creatureType ==  `Beast`) {
+    //sets {creatureSize} based off of {secondaryType}
+    if (secondaryType == `Air`) {
+      let possibleSizes = [`Tiny`, `Small`, `Medium`, `Large`]
+      creatureSize = possibleSizes[Math.floor(Math.random() * possibleSizes.length)]
+    } else if (secondaryType == `Land` || secondaryType == `Water`) {
+      let possibleSizes = [`Tiny`, `Small`, `Medium`, `Large`, `Huge`]
+      creatureSize = possibleSizes[Math.floor(Math.random() * possibleSizes.length)]
+    }
+  }
+  //returns the creature size
+  return creatureSize
+}
+
+//A function to temp display what has been generated
+function TempDisplay(creatureName, creatureSize, creatureType) {
+  console.log(creatureName)
+  console.log(creatureSize + ` ` + creatureType)
 }
 Main()
