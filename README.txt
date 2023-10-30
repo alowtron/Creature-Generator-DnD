@@ -1,11 +1,11 @@
 #Things to have
-- Names
+- Names (Temp Done)
 - Alignment
-- Challenge Rating-(Temp Done)
+- Challenge Rating (Temp Done)
 - Size
 - Types (Creature or Swarm)
   - Aberration
-  - Beast
+  - Beast (Temp Done)
   - Celestial
   - Construct
   - Dragon
@@ -85,7 +85,8 @@
   - Slashing
   - Thunder
   - Other
-- Damage Resistances  - Acid
+- Damage Resistances
+  - Acid
   - Bludgeoning
   - Cold
   - Fire
