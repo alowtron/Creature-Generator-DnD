@@ -3,4 +3,5 @@
 - Make name system (Done for Beasts)
 - Size (Done for Beasts)
 - Allignment (Done for Beasts)
-- Ability Scores
+- Ability Scores (Done for Beasts)
+- Display the Ability scores in {TempDisplay 
