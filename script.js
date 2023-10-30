@@ -8,9 +8,11 @@ function Main() {
   let creatureName = CreatureName(creatureType[0])
   //gets the size of the creature based off the creature type
   let creatureSize = CreatureSize(creatureType[0], creatureType[1])
+  //gets the alignment of a creature based off the crature type
+  let alignment = Alignment(creatureType[0])
   
   //temp code to display creature on console
-  TempDisplay(creatureName, creatureSize, creatureType[0])
+  TempDisplay(creatureName, creatureSize, creatureType[0], alignment)
 }
 //Sets the challenge rating
 function ChallengeRating() {
@@ -76,10 +78,20 @@ function CreatureSize(creatureType, secondaryType) {
   //returns the creature size
   return creatureSize
 }
+//Stes the allignment of the creature
+function Alignment(creatureType) {
+  //intialize alignment var
+  let alignment = ``
+  //set allignment based on {cratureType}
+  if (creatureType == `Beast`) {
+    alignment = `Neutral`
+  }
+  return alignment
+}
 
 //A function to temp display what has been generated
-function TempDisplay(creatureName, creatureSize, creatureType) {
+function TempDisplay(creatureName, creatureSize, creatureType, alignment) {
   console.log(creatureName)
-  console.log(creatureSize + ` ` + creatureType)
+  console.log(creatureSize + ` ` + creatureType + `, ` + alignment)
 }
 Main()
