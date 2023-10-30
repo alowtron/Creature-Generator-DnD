@@ -1,2 +1,3 @@
 - Build up challenge rating system (DONE)
+- Get Types (Done for Beasts)
 - Make name system

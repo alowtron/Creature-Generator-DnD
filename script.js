@@ -2,6 +2,8 @@
 function Main() {
   //gets the challenge rating for creature
   let challengeRating = ChallengeRating()
+  //gets the type of the creature
+  let creatureType = CreatureType()
 }
 //Sets the challenge rating
 function ChallengeRating() {
@@ -13,5 +15,16 @@ function ChallengeRating() {
     challengeRating = Math.floor(Math.random() * 30 + 1)
   }
   return challengeRating
+}
+//Sets the type of the creature
+function CreatureType() {
+  let typeList = [`Beast`]
+  let creatureType = typeList[0]
+  let secondaryType = 'none'
+  if (creatureType == `Beast`) {
+    typeList = [`Air`, `Land`, `Water`]
+    secondaryType = typeList[2]
+  }
+  return [creatureType, secondaryType]
 }
 Main()
