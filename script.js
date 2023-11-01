@@ -14,9 +14,11 @@ function Main() {
   let abilityScores = AbilityScores(creatureType[0], creatureSize)
   //gets the modifiers for ability scores
   let modifiers = Modifiers(abilityScores)
-  
+  //gets the armor class of the creature
+  let armorClass = ArmorClass(creatureType[0], modifiers)
+
   //temp code to display creature on console
-  TempDisplay(creatureName, creatureSize, creatureType[0], alignment, abilityScores, modifiers)
+  TempDisplay(creatureName, creatureSize, creatureType[0], alignment, armorClass, abilityScores, modifiers)
 }
 //Sets the challenge rating
 function ChallengeRating() {
@@ -69,7 +71,7 @@ function CreatureSize(creatureType, secondaryType) {
   //initializes creatures size var
   let creatureSize = ``
   //sets creature type if {creatureType} is beast
-  if (creatureType ==  `Beast`) {
+  if (creatureType == `Beast`) {
     //sets {creatureSize} based off of {secondaryType}
     if (secondaryType == `Air`) {
       let possibleSizes = [`Tiny`, `Small`, `Medium`, `Large`]
@@ -102,7 +104,7 @@ function AbilityScores(creatureType, creatureSize) {
   }
   //Returns everything
   return abilityScores
-  
+
   //functions for findings size of creature types
   function BeastScores() {
     //Size based
@@ -132,7 +134,7 @@ function AbilityScores(creatureType, creatureSize) {
     abilityScores[4] = WisBeast()
     abilityScores[5] = ChaBeast()
   }
-  
+
   //function for finding abilties of creatures
   //funciton for finding STR of tiny creatures
   function StrTiny() {
@@ -228,13 +230,13 @@ function AbilityScores(creatureType, creatureSize) {
 //Sets the modifiers for {AbilityScores}
 function Modifiers(abilityScores) {
   /*For loop to set {modifiers} {abilityScores} without appending it*/
-  let modifiers = [0, 0, 0, 0, 0, 0] 
+  let modifiers = [0, 0, 0, 0, 0, 0]
   for (let i = 0; i < 6; i++) {
     modifiers[i] = abilityScores[i]
   }
   //makes all for the number even then gives them the proper modifier
   for (let i = 0; i < 6; i++) {
-    if (modifiers[i] % 2 == 1){
+    if (modifiers[i] % 2 == 1) {
       modifiers[i]--
     }
     modifiers[i] = modifiers[i] / 2 - 5
@@ -242,11 +244,21 @@ function Modifiers(abilityScores) {
   //returns {modifiers}
   return modifiers
 }
+//sets the armor class based off of {creatureType} and {modifiers}
+function ArmorClass(creatureType, modifiers) {
+  //sets armor class to 10
+  let armorClass = 10
+  if (creatureType == `Beast`) {
+    armorClass = 10 + modifiers[1] + modifiers[2]
+  }
+  return armorClass
+}
 
 //A function to temp display what has been generated
-function TempDisplay(creatureName, creatureSize, creatureType, alignment, abilityScores, modifiers) {
+function TempDisplay(creatureName, creatureSize, creatureType, alignment, armorClass, abilityScores, modifiers) {
   console.log(creatureName)
   console.log(creatureSize + ` ` + creatureType + `, ` + alignment)
+  console.log(`Armor Class: ${armorClass}`)
   console.log(`STR DEX CON INT WIS CHA`)
   console.log(abilityScores)
   console.log(modifiers)
