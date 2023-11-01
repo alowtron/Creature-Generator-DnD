@@ -6,4 +6,4 @@
 - Ability Scores (Done for Beasts)
 - Display the Ability scores in {TempDisplay (temp Done)}
 - Apply the modifier for ability scores (DONE)
-- Generate a armor class based off of creatureType and ability scores
+- Generate a armor class based off of creatureType and ability scores 
