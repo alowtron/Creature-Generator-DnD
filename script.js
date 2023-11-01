@@ -12,10 +12,11 @@ function Main() {
   let alignment = Alignment(creatureType[0])
   //gets the ability scores for the creature
   let abilityScores = AbilityScores(creatureType[0], creatureSize)
-  console.log(abilityScores)
+  //gets the modifiers for ability scores
+  let modifiers = Modifiers(abilityScores)
   
   //temp code to display creature on console
-  TempDisplay(creatureName, creatureSize, creatureType[0], alignment)
+  TempDisplay(creatureName, creatureSize, creatureType[0], alignment, abilityScores, modifiers)
 }
 //Sets the challenge rating
 function ChallengeRating() {
@@ -224,10 +225,31 @@ function AbilityScores(creatureType, creatureSize) {
     return tempScore
   }
 }
+//Sets the modifiers for {AbilityScores}
+function Modifiers(abilityScores) {
+  /*For loop to set {modifiers} {abilityScores} without appending it*/
+  let modifiers = [0, 0, 0, 0, 0, 0] 
+  for (let i = 0; i < 6; i++) {
+    modifiers[i] = abilityScores[i]
+  }
+  //makes all for the number even then gives them the proper modifier
+  for (let i = 0; i < 6; i++) {
+    if (modifiers[i] % 2 == 1){
+      modifiers[i]--
+    }
+    modifiers[i] = modifiers[i] / 2 - 5
+  }
+  //returns {modifiers}
+  return modifiers
+}
 
 //A function to temp display what has been generated
-function TempDisplay(creatureName, creatureSize, creatureType, alignment) {
+function TempDisplay(creatureName, creatureSize, creatureType, alignment, abilityScores, modifiers) {
   console.log(creatureName)
   console.log(creatureSize + ` ` + creatureType + `, ` + alignment)
+  console.log(`STR DEX CON INT WIS CHA`)
+  console.log(abilityScores)
+  console.log(modifiers)
 }
+
 Main()
