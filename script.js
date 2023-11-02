@@ -16,9 +16,11 @@ function Main() {
   let modifiers = Modifiers(abilityScores)
   //gets the armor class of the creature
   let armorClass = ArmorClass(creatureType[0], modifiers)
+  //gets the hipoints of the creature
+  let hitPoints = HitPoints(challengeRating, creatureType[0], creatureSize, modifiers)
 
   //temp code to display creature on console
-  TempDisplay(creatureName, creatureSize, creatureType[0], alignment, armorClass, abilityScores, modifiers)
+  TempDisplay(challengeRating, creatureName, creatureSize, creatureType[0], alignment, armorClass, hitPoints, abilityScores, modifiers)
 }
 //Sets the challenge rating
 function ChallengeRating() {
@@ -244,7 +246,7 @@ function Modifiers(abilityScores) {
   //returns {modifiers}
   return modifiers
 }
-//sets the armor class based off of {creatureType} and {modifiers}
+//Sets the armor class based off of {creatureType} and {modifiers}
 function ArmorClass(creatureType, modifiers) {
   //sets armor class to 10
   let armorClass = 10
@@ -253,15 +255,35 @@ function ArmorClass(creatureType, modifiers) {
   }
   return armorClass
 }
-
+//Sets the hitpoints of the creture based off of the {creatureType[0]}
+function HitPoints(challengeRating, creatureType, creatureSize, modifiers) {
+  let hitPoints = [0, 0]
+  if (creatureType == `Beast`) {
+    if (creatureSize == `Tiny`) {
+      hitPoints[1] = 3
+    } else if (creatureSize == `Small`) {
+      hitPoints[1] = 4
+    } else if (creatureSize == `Medium`) {
+      hitPoints[1] = 5
+    } else if (creatureSize == `Large`) {
+      hitPoints[1] = 6
+    } else if (creatureSize == `Huge`) {
+      hitPoints[1] = 7
+    }
+  }
+  hitPoints[0] = hitPoints[1] * challengeRating + modifiers[2] * challengeRating
+  return hitPoints
+}
 //A function to temp display what has been generated
-function TempDisplay(creatureName, creatureSize, creatureType, alignment, armorClass, abilityScores, modifiers) {
+function TempDisplay(challengeRating, creatureName, creatureSize, creatureType, alignment, armorClass, hitPoints, abilityScores, modifiers) {
   console.log(creatureName)
   console.log(creatureSize + ` ` + creatureType + `, ` + alignment)
   console.log(`Armor Class: ${armorClass}`)
+  console.log(`Hit Points: ${hitPoints[0]} (${challengeRating}d${hitPoints[1] + hitPoints[1]-2}+${modifiers[2] * challengeRating})`)
   console.log(`STR DEX CON INT WIS CHA`)
   console.log(abilityScores)
   console.log(modifiers)
+  console.log(`Challenge ${challengeRating}`)
 }
 
 Main()
