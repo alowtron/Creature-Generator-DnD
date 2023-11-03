@@ -16,11 +16,13 @@ function Main() {
   let modifiers = Modifiers(abilityScores)
   //gets the armor class of the creature
   let armorClass = ArmorClass(creatureType[0], modifiers)
-  //gets the hipoints of the creature
+  //gets the hit points of the creature
   let hitPoints = HitPoints(challengeRating, creatureType[0], creatureSize, modifiers)
+  //gets the speed of the creature
+  let speed = Speed(creatureType, abilityScores)
 
   //temp code to display creature on console
-  TempDisplay(challengeRating, creatureName, creatureSize, creatureType[0], alignment, armorClass, hitPoints, abilityScores, modifiers)
+  TempDisplay(challengeRating, creatureName, creatureSize, creatureType[0], alignment, armorClass, hitPoints, speed, abilityScores, modifiers)
 }
 //Sets the challenge rating
 function ChallengeRating() {
@@ -45,7 +47,7 @@ function CreatureType() {
   //secondary types for beast
   if (creatureType == `Beast`) {
     typeList = [`Air`, `Land`, `Water`]
-    secondaryType = typeList[2]
+    secondaryType = typeList[Math.floor(Math.random() * typeList.length)]
   }
   //Returns the creatures type and secondary type as a array
   return [creatureType, secondaryType]
@@ -274,12 +276,30 @@ function HitPoints(challengeRating, creatureType, creatureSize, modifiers) {
   hitPoints[0] = hitPoints[1] * challengeRating + modifiers[2] * challengeRating
   return hitPoints
 }
+//Sets the speed of the creature based off of the {creatureType[0] and creatureType[1] and {modifiers[1]}}
+function Speed(creatureType, abilityScores) {
+  let speed1 = 0
+  let speed2 = 0
+  let speed3 = 0
+  if (creatureType[0] == `Beast` ) {
+    if (creatureType[1] == `Land`) {
+      speed1 = Math.round((abilityScores[1] * 3) / 5) * 5
+    } else if (creatureType[1] == `Air`) {
+      speed1 = Math.round((abilityScores[1] * 2) / 5) * 5
+      speed2 = Math.round((abilityScores[1] * 4) / 5) * 5
+    } else if (creatureType[1] == `Water`) {
+      speed3 = Math.round((abilityScores[1] * 3) / 5) * 5
+    }
+  }
+  return [speed1, speed2, speed3]
+}
 //A function to temp display what has been generated
-function TempDisplay(challengeRating, creatureName, creatureSize, creatureType, alignment, armorClass, hitPoints, abilityScores, modifiers) {
+function TempDisplay(challengeRating, creatureName, creatureSize, creatureType, alignment, armorClass, hitPoints, speed, abilityScores, modifiers) {
   console.log(creatureName)
   console.log(creatureSize + ` ` + creatureType + `, ` + alignment)
   console.log(`Armor Class: ${armorClass}`)
   console.log(`Hit Points: ${hitPoints[0]} (${challengeRating}d${hitPoints[1] + hitPoints[1]-2}+${modifiers[2] * challengeRating})`)
+  console.log(`Speed: ${speed} ft.`)
   console.log(`STR DEX CON INT WIS CHA`)
   console.log(abilityScores)
   console.log(modifiers)
