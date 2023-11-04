@@ -24,6 +24,7 @@ function Main() {
   //temp code to display creature on console
   TempDisplay(challengeRating, creatureName, creatureSize, creatureType[0], alignment, armorClass, hitPoints, speed, abilityScores, modifiers)
 }
+
 //Sets the challenge rating
 function ChallengeRating() {
   //Sets the challenge rating to temperary var
@@ -278,28 +279,42 @@ function HitPoints(challengeRating, creatureType, creatureSize, modifiers) {
 }
 //Sets the speed of the creature based off of the {creatureType[0] and creatureType[1] and {modifiers[1]}}
 function Speed(creatureType, abilityScores) {
+  let speed0 = 0
+  //used for fly
   let speed1 = 0
+  //used for swim
   let speed2 = 0
-  let speed3 = 0
   if (creatureType[0] == `Beast` ) {
     if (creatureType[1] == `Land`) {
-      speed1 = Math.round((abilityScores[1] * 3) / 5) * 5
+      speed0 = Math.round((abilityScores[1] * 3) / 5) * 5
     } else if (creatureType[1] == `Air`) {
-      speed1 = Math.round((abilityScores[1] * 2) / 5) * 5
-      speed2 = Math.round((abilityScores[1] * 4) / 5) * 5
+      speed0 = Math.round((abilityScores[1] * 2) / 5) * 5
+      speed1 = Math.round((abilityScores[1] * 4) / 5) * 5
     } else if (creatureType[1] == `Water`) {
-      speed3 = Math.round((abilityScores[1] * 3) / 5) * 5
+      speed2 = Math.round((abilityScores[1] * 3) / 5) * 5
     }
   }
-  return [speed1, speed2, speed3]
+  return [speed0, speed1, speed2]
 }
+
 //A function to temp display what has been generated
 function TempDisplay(challengeRating, creatureName, creatureSize, creatureType, alignment, armorClass, hitPoints, speed, abilityScores, modifiers) {
   console.log(creatureName)
   console.log(creatureSize + ` ` + creatureType + `, ` + alignment)
   console.log(`Armor Class: ${armorClass}`)
   console.log(`Hit Points: ${hitPoints[0]} (${challengeRating}d${hitPoints[1] + hitPoints[1]-2}+${modifiers[2] * challengeRating})`)
-  console.log(`Speed: ${speed} ft.`)
+  //code for adding flight and swim
+  if (speed[1] != 0) {
+    tempSpeedFlyText = `(fly: ${speed[1]} ft.)`
+  } else {
+    tempSpeedFlyText = ``
+  }
+  if (speed[2] != 0) {
+    tempSpeedSwimText = `(swim: ${speed[2]} ft.)`
+  } else {
+    tempSpeedSwimText = ``
+  }
+  console.log(`Speed: ${speed[0]} ft. ${tempSpeedFlyText}${tempSpeedSwimText}`)
   console.log(`STR DEX CON INT WIS CHA`)
   console.log(abilityScores)
   console.log(modifiers)

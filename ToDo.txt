@@ -9,4 +9,5 @@
 - Generate a armor class based off of creatureType and ability scores (Done for beast)
 - Generate the number of hit points creatur has (beast done)
 - gets the speed for the creatures (mostly done)
-- display the speed correctly in {tempDisplay}
+- display the speed correctly in {tempDisplay} (works for flight and swim)
+- get the right saving throws and display them
