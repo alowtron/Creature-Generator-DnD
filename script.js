@@ -22,9 +22,11 @@ function Main() {
   let speed = Speed(creatureType, abilityScores)
   //gets proficiencyBonus
   let proficiencyBonus = ProficiencyBonus(challengeRating)
+  //gets saving throws
+  let savingThrows = SavingThrows(modifiers, proficiencyBonus)
 
   //temp code to display creature on console
-  TempDisplay(challengeRating, creatureName, creatureSize, creatureType[0], alignment, armorClass, hitPoints, speed, abilityScores, modifiers, proficiencyBonus)
+  TempDisplay(challengeRating, creatureName, creatureSize, creatureType[0], alignment, armorClass, hitPoints, speed, abilityScores, modifiers, savingThrows, proficiencyBonus)
 }
 
 //Sets the challenge rating
@@ -323,7 +325,7 @@ function ProficiencyBonus(challengeRating) {
   return proficiencyBonus
 }
 //saving throws
-function SavingThrows(modifiers) {
+function SavingThrows(modifiers, proficiencyBonus) {
   //get the number of saving throws to have
   let numberOf = Math.floor(Math.random() * 3) + 1
   //create the array to save the saving throws
@@ -338,22 +340,33 @@ function SavingThrows(modifiers) {
   //finds the second highest number
   let secondHighest = 0
   for (let i = 0; i < 6; i++) {
-    if (modiers[i] > secondHighest && i != highest) {
+    if (modifiers[i] > secondHighest && i != highest) {
       secondHighest = i
     }
   }
   //finds the third highest number
   let thirdHighest = 0
   for (let i = 0; i < 6; i++) {
-    if (modiers[i] > thirdHighest && i != highest && i != secondHighest) {
+    if (modifiers[i] > thirdHighest && i != highest && i != secondHighest) {
       thirdHighest = i
     }
   }
-  //
+  //Set the saving throws
+  for (let i = 0; i < numberOf; i++) {
+    if (i == 0) {
+      savingThrows[highest] = modifiers[highest] + proficiencyBonus
+    } else if (i == 1) {
+      savingThrows[secondHighest] = modifiers[secondHighest] + proficiencyBonus
+    
+    } else if (i == 2) {
+      savingThrows[thirdHighest] = modifiers[thirdHighest] + proficiencyBonus
+    }
+  }
+  return savingThrows
 }
 
 //A function to temp display what has been generated
-function TempDisplay(challengeRating, creatureName, creatureSize, creatureType, alignment, armorClass, hitPoints, speed, abilityScores, modifiers, proficiencyBonus) {
+function TempDisplay(challengeRating, creatureName, creatureSize, creatureType, alignment, armorClass, hitPoints, speed, abilityScores, modifiers, savingThrows, proficiencyBonus) {
   console.log(creatureName)
   console.log(creatureSize + ` ` + creatureType + `, ` + alignment)
   console.log(`Armor Class: ${armorClass}`)
@@ -373,6 +386,7 @@ function TempDisplay(challengeRating, creatureName, creatureSize, creatureType, 
   console.log(`STR DEX CON INT WIS CHA`)
   console.log(abilityScores)
   console.log(modifiers)
+  console.log(savingThrows)
   console.log(`Challenge ${challengeRating}`)
   console.log(`Prificiency Bonus +${proficiencyBonus}`)
 }
