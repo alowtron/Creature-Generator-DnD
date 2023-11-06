@@ -20,9 +20,11 @@ function Main() {
   let hitPoints = HitPoints(challengeRating, creatureType[0], creatureSize, modifiers)
   //gets the speed of the creature
   let speed = Speed(creatureType, abilityScores)
+  //gets proficiencyBonus
+  let proficiencyBonus = ProficiencyBonus(challengeRating)
 
   //temp code to display creature on console
-  TempDisplay(challengeRating, creatureName, creatureSize, creatureType[0], alignment, armorClass, hitPoints, speed, abilityScores, modifiers)
+  TempDisplay(challengeRating, creatureName, creatureSize, creatureType[0], alignment, armorClass, hitPoints, speed, abilityScores, modifiers, proficiencyBonus)
 }
 
 //Sets the challenge rating
@@ -296,9 +298,62 @@ function Speed(creatureType, abilityScores) {
   }
   return [speed0, speed1, speed2]
 }
+//Sets profiency bonus based off of cr
+function ProficiencyBonus(challengeRating) {
+  //intialize proficiencyBonus to 0
+  let proficiencyBonus = 0
+  //set proficiencyBonuc based off of cr
+  if (challengeRating <= 4) {
+    prficiencyBonus = 2
+  } else if (challengeRating <= 8) {
+    proficiencyBonus = 3
+  } else if (challengeRating <= 12) {
+    proficiencyBonus = 4
+  } else if (challengeRating <= 16) {
+    proficiencyBonus = 5
+  } else if (challengeRating <= 20) {
+    proficiencyBonus = 6
+  } else if (challengeRating <= 24) {
+    proficiencyBonus = 7
+  } else if (challengeRating <= 28) {
+    proficiencyBonus = 8
+  } else if (challengeRating >= 29) {
+    proficiencyBonus = 9
+  }
+  return proficiencyBonus
+}
+//saving throws
+function SavingThrows(modifiers) {
+  //get the number of saving throws to have
+  let numberOf = Math.floor(Math.random() * 3) + 1
+  //create the array to save the saving throws
+  let savingThrows = [0, 0, 0, 0, 0, 0]
+  //finds the highest number
+  let highest = 0
+  for (let i = 0; i < 6; i++) {
+    if (modifiers[i] > modifiers[highest]) {
+      highest = i
+    }
+  }
+  //finds the second highest number
+  let secondHighest = 0
+  for (let i = 0; i < 6; i++) {
+    if (modiers[i] > secondHighest && i != highest) {
+      secondHighest = i
+    }
+  }
+  //finds the third highest number
+  let thirdHighest = 0
+  for (let i = 0; i < 6; i++) {
+    if (modiers[i] > thirdHighest && i != highest && i != secondHighest) {
+      thirdHighest = i
+    }
+  }
+  //
+}
 
 //A function to temp display what has been generated
-function TempDisplay(challengeRating, creatureName, creatureSize, creatureType, alignment, armorClass, hitPoints, speed, abilityScores, modifiers) {
+function TempDisplay(challengeRating, creatureName, creatureSize, creatureType, alignment, armorClass, hitPoints, speed, abilityScores, modifiers, proficiencyBonus) {
   console.log(creatureName)
   console.log(creatureSize + ` ` + creatureType + `, ` + alignment)
   console.log(`Armor Class: ${armorClass}`)
@@ -319,6 +374,7 @@ function TempDisplay(challengeRating, creatureName, creatureSize, creatureType, 
   console.log(abilityScores)
   console.log(modifiers)
   console.log(`Challenge ${challengeRating}`)
+  console.log(`Prificiency Bonus +${proficiencyBonus}`)
 }
 
 Main()

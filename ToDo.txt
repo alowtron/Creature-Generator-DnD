@@ -10,4 +10,5 @@
 - Generate the number of hit points creatur has (beast done)
 - gets the speed for the creatures (mostly done)
 - display the speed correctly in {tempDisplay} (works for flight and swim)
-- get the right saving throws and display them
+- make a proficiency bonus (DONE)
+- get the right saving throws and display them (started)
