@@ -1,11 +1,11 @@
 #Things to have
 - Names (Temp Done)
-- Alignment
+- Alignment (Temp Done)
 - Challenge Rating (Temp Done)
-- Size
+- Size (Done: Beasts,)
 - Types (Creature or Swarm)
   - Aberration
-  - Beast (Temp Done)
+  - Beast (Done)
   - Celestial
   - Construct
   - Dragon
@@ -20,31 +20,19 @@
   - Plant
   - Undead
   - (Random)
-- Speed
+- Speed (Done: Beasts,)
 - Burrow (optional)
 - Climb (optional)
-- Fly (optional)
-- Swim (optional)
+- Fly (Done)
+- Swim (Done)
 - Senses (optional)
   - Blindsight
   - Darkvision
   - TremorSense
   - Truesight
 - Languages
-- Ability Scores
-  - STR
-  - DEX
-  - CON
-  - INT
-  - WIS
-  - CHA
-- Saving Throws
-  - STR
-  - DEX
-  - CON
-  - INT
-  - WIS
-  - CHA
+- Ability Scores (DONE)
+- Saving Throws (Done)
 - Skills (Prof./Expert)
   - Acrobatics (DEX)
   - Animal Handling (WIS)
@@ -63,13 +51,11 @@
   - Stealth (DEX)
   - Survival (WIS)
 - Passive Perception (Goes in Senses)
-- Armor Class
+- Armor Class (Temp Done)
   - Unarmored
   - Armor from....
   - Conditional Armor
-- Hit Points
-  - Hit Points Formula
-  - Hit Points Average
+- Hit Points (DONE)
 - Damage Vlnerabilities
   - Acid
   - Bludgeoning
