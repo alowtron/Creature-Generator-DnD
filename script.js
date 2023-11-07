@@ -364,6 +364,28 @@ function SavingThrows(modifiers, proficiencyBonus) {
   }
   return savingThrows
 }
+//Sets the skills that Creature has
+function Skills(creatureType, modifiers) {
+  //initiallize skills to empty arrayt
+  let skills = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  //array of all of the skill types
+  let skillTypes = [`Acrobatics`, `Animal Handling`, `Arcana`, `Athletics`, `Deception`, `History`, `Insight`, `Intimidation`, `Investigation`, `Medicine`, `Nature`, `Perception`, `Performance`, `Persuasion`, `Religion`, `Sleight of Hand`, `Stealth`, `Survival`]
+
+  //Sets the skills based on creature type
+  if (creatureType[0] == `Beast`) {
+    //sets skills based on secondary type
+    skills = beastSkills(creatureType[1])
+    
+  } 
+
+
+  //functions to get skils based on creature type
+  function beastSkills(type2) {
+    return skills
+  }
+
+  return skills
+}
 
 //A function to temp display what has been generated
 function TempDisplay(challengeRating, creatureName, creatureSize, creatureType, alignment, armorClass, hitPoints, speed, abilityScores, modifiers, savingThrows, proficiencyBonus) {

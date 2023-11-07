@@ -12,3 +12,4 @@
 - display the speed correctly in {tempDisplay} (works for flight and swim)
 - make a proficiency bonus (DONE)
 - get the right saving throws and display them (done)
+- Skills(Started)
