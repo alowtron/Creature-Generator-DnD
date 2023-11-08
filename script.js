@@ -381,6 +381,19 @@ function Skills(creatureType, modifiers) {
 
   //functions to get skils based on creature type
   function beastSkills(type2) {
+    //generate the number of skills to have
+    let numOfSkills = Math.randint(Math.random() * 4) + 1
+    //options for skills
+    let skillOptions = [3, 10, 11, 16, 17]
+    // generate what skills to get
+    for (let i = 0; i < numOfSkills; i++) {
+      //get a random skill to genertate
+      let tempSkill = Math.randint(Math.random() * 4)
+      if (skills[skillOption[tempSkill]] < 2) {
+        skills[skillOption[tempSkill]]] += 1
+      }
+
+    }
     return skills
   }
 
