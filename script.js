@@ -24,6 +24,8 @@ function Main() {
   let proficiencyBonus = ProficiencyBonus(challengeRating)
   //gets saving throws
   let savingThrows = SavingThrows(modifiers, proficiencyBonus)
+  //get skills
+  let skills = Skills(creatureType, modifiers)
 
   //temp code to display creature on console
   TempDisplay(challengeRating, creatureName, creatureSize, creatureType[0], alignment, armorClass, hitPoints, speed, abilityScores, modifiers, savingThrows, proficiencyBonus)
@@ -382,15 +384,15 @@ function Skills(creatureType, modifiers) {
   //functions to get skils based on creature type
   function beastSkills(type2) {
     //generate the number of skills to have
-    let numOfSkills = Math.randint(Math.random() * 4) + 1
+    let numOfSkills = Math.floor(Math.random() * 4) + 1
     //options for skills
     let skillOptions = [3, 10, 11, 16, 17]
     // generate what skills to get
     for (let i = 0; i < numOfSkills; i++) {
       //get a random skill to genertate
-      let tempSkill = Math.randint(Math.random() * 4)
-      if (skills[skillOption[tempSkill]] < 2) {
-        skills[skillOption[tempSkill]]] += 1
+      let tempSkill = Math.floor(Math.random() * 4)
+      if (skills[skillOptions[tempSkill]] < 2) {
+        skills[skillOptions[tempSkill]] += 1
       }
 
     }
