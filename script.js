@@ -27,8 +27,8 @@ function Main() {
   //get skills
   let skills = Skills(creatureType, modifiers)
 
-  //temp code to display creature on console
-  TempDisplay(challengeRating, creatureName, creatureSize, creatureType[0], alignment, armorClass, hitPoints, speed, abilityScores, modifiers, savingThrows, proficiencyBonus)
+  //code to display creature on console
+  Display(challengeRating, creatureName, creatureSize, creatureType[0], alignment, armorClass, hitPoints, speed, abilityScores, modifiers, savingThrows, proficiencyBonus)
 }
 
 //Sets the challenge rating
@@ -264,7 +264,7 @@ function ArmorClass(creatureType, modifiers) {
   }
   return armorClass
 }
-//Sets the hitpoints of the creture based off of the {creatureType[0]}
+//Sets the hit points of the creature based off of the {creatureType[0]}
 function HitPoints(challengeRating, creatureType, creatureSize, modifiers) {
   let hitPoints = [0, 0]
   if (creatureType == `Beast`) {
@@ -402,8 +402,8 @@ function Skills(creatureType, modifiers) {
   return skills
 }
 
-//A function to temp display what has been generated
-function TempDisplay(challengeRating, creatureName, creatureSize, creatureType, alignment, armorClass, hitPoints, speed, abilityScores, modifiers, savingThrows, proficiencyBonus) {
+//A function to display what has been generated
+function Display(challengeRating, creatureName, creatureSize, creatureType, alignment, armorClass, hitPoints, speed, abilityScores, modifiers, savingThrows, proficiencyBonus) {
   console.log(creatureName)
   console.log(creatureSize + ` ` + creatureType + `, ` + alignment)
   console.log(`Armor Class: ${armorClass}`)
@@ -419,13 +419,14 @@ function TempDisplay(challengeRating, creatureName, creatureSize, creatureType, 
   } else {
     tempSpeedSwimText = ``
   }
+  document.getElementById('Creature-Stats').innerHTML = `Speed: ${speed[0]} ft. ${tempSpeedFlyText}${tempSpeedSwimText}`
   console.log(`Speed: ${speed[0]} ft. ${tempSpeedFlyText}${tempSpeedSwimText}`)
   console.log(`STR DEX CON INT WIS CHA`)
   console.log(abilityScores)
   console.log(modifiers)
   console.log(savingThrows)
   console.log(`Challenge ${challengeRating}`)
-  console.log(`Prificiency Bonus +${proficiencyBonus}`)
+  console.log(`Proficiency Bonus +${proficiencyBonus}`)
 }
 
 Main()
