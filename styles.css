@@ -1,0 +1,103 @@
+/* Code for footer */
+/* footer {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    background-color: #242424;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+footer ul {
+
+    list-style-type: none;
+}
+footer li a {
+    color: white;
+    text-decoration: none;
+} */
+/*Code for the nav bar*/
+.logo {
+    position: absolute;
+    left: 0; 
+    width: 2.25rem; 
+    height: 2.25rem;
+    margin: 0.3rem;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #242424;
+    padding-left: 48px;
+}
+nav li {
+    /* messing around with a border */
+    /* border-left: solid;
+    border-width: 0.01rem;
+    border-color: silver; */
+    /* margin: left; */
+    float: left;
+}
+nav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+/*cool blue #202835 */
+nav li a:hover:not(.active) {
+    background-color: #202835;
+}
+
+nav .active {
+    background-color: #2A3035;
+}
+
+
+/*sets margin to 0 in body so that nav bar spans properly*/
+body {
+    margin: 0;
+}
+
+/*main body*/
+main {
+    margin-left: 4rem;
+    margin-right: 4rem;
+    margin-bottom: 2rem;
+}
+
+p {
+    font-size: 1.2rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+h2 {
+    font-size: 2rem;
+    text-align: left;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+html {
+    background-color: #2A3035;
+    color: silver;
+}
+
+a {
+    color: silver;
+    text-decoration: none;
+}
+
+.indent {
+    text-indent: 2rem;
+}
+
+/* Main body mobile */
+

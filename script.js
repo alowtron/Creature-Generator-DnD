@@ -4,11 +4,11 @@ function Main() {
   let challengeRating = ChallengeRating()
   //gets the type of the creature'
   let creatureType = CreatureType()
-  //assings a name based off of crature type
+  //gets a name based off of creature type
   let creatureName = CreatureName(creatureType[0])
   //gets the size of the creature based off the creature type
   let creatureSize = CreatureSize(creatureType[0], creatureType[1])
-  //gets the alignment of a creature based off the crature type
+  //gets the alignment of a creature based off the creature type
   let alignment = Alignment(creatureType[0])
   //gets the ability scores for the creature
   let abilityScores = AbilityScores(creatureType[0], creatureSize)
@@ -31,17 +31,7 @@ function Main() {
   Display(challengeRating, creatureName, creatureSize, creatureType[0], alignment, armorClass, hitPoints, speed, abilityScores, modifiers, savingThrows, proficiencyBonus)
 }
 
-//Sets the challenge rating
-function ChallengeRating() {
-  //Sets the challenge rating to temperary var
-  //can chage to to random for a random cr or prompt the user for a cr
-  let challengeRating = 5
-  //if {challengeRating} is random create a random cr
-  if (challengeRating == 'random') {
-    challengeRating = Math.floor(Math.random() * 30 + 1)
-  }
-  return challengeRating
-}
+
 //Sets the type of the creature
 function CreatureType() {
   //List of types of creatures that can be created
