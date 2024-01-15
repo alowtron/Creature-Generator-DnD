@@ -51,7 +51,7 @@ function CreatureType() {
 }
 //makes a name base off of the creature type
 function CreatureName(creatureType) {
-  //intializes creatures name to blank string
+  //initializes creatures name to blank string
   let creatureName = ``
   //creates creature name based off of its creature type
   //if {creatureType} is Beast
@@ -85,11 +85,11 @@ function CreatureSize(creatureType, secondaryType) {
   //returns the creature size
   return creatureSize
 }
-//Sets the allignment of the creature
+//Sets the alignment of the creature
 function Alignment(creatureType) {
-  //intialize alignment var
+  //initialize alignment var
   let alignment = ``
-  //set allignment based on {cratureType}
+  //set alignment based on {creatureType}
   if (creatureType == `Beast`) {
     alignment = `Neutral`
   }
@@ -98,7 +98,7 @@ function Alignment(creatureType) {
 //Sets the ability score of the creature
 function AbilityScores(creatureType, creatureSize) {
   /*This part of the code works by calling a function based off of the type of creature, and the function creates a value based off of the size and type of the creature*/
-  //initializes all of the ablility scores to 0
+  //initializes all of the ability scores to 0
   let abilityScores = [0, 0, 0, 0, 0, 0]
   if (creatureType == `Beast`) {
     BeastScores()
@@ -136,13 +136,13 @@ function AbilityScores(creatureType, creatureSize) {
     abilityScores[5] = ChaBeast()
   }
 
-  //function for finding abilties of creatures
-  //funciton for finding STR of tiny creatures
+  //function for finding abilities of creatures
+  //function for finding STR of tiny creatures
   function StrTiny() {
     let tempScore = 2 + Math.floor(Math.random() * 7)
     return tempScore
   }
-  //functgion for findind DEX of tiny creature
+  //function for finding DEX of tiny creature
   function DexTiny() {
     let tempScore = 6 + Math.floor(Math.random() * 13)
     return tempScore
@@ -292,13 +292,13 @@ function Speed(creatureType, abilityScores) {
   }
   return [speed0, speed1, speed2]
 }
-//Sets profiency bonus based off of cr
+//Sets proficiency bonus based off of cr
 function ProficiencyBonus(challengeRating) {
-  //intialize proficiencyBonus to 0
+  //initializes proficiencyBonus to 0
   let proficiencyBonus = 0
-  //set proficiencyBonuc based off of cr
+  //set proficiencyBonus based off of cr
   if (challengeRating <= 4) {
-    prficiencyBonus = 2
+    proficiencyBonus = 2
   } else if (challengeRating <= 8) {
     proficiencyBonus = 3
   } else if (challengeRating <= 12) {
@@ -358,7 +358,7 @@ function SavingThrows(modifiers, proficiencyBonus) {
 }
 //Sets the skills that Creature has
 function Skills(creatureType, modifiers) {
-  //initiallize skills to empty arrayt
+  //initializes skills to empty arrays
   let skills = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
   //array of all of the skill types
   let skillTypes = [`Acrobatics`, `Animal Handling`, `Arcana`, `Athletics`, `Deception`, `History`, `Insight`, `Intimidation`, `Investigation`, `Medicine`, `Nature`, `Perception`, `Performance`, `Persuasion`, `Religion`, `Sleight of Hand`, `Stealth`, `Survival`]
@@ -371,7 +371,7 @@ function Skills(creatureType, modifiers) {
   } 
 
 
-  //functions to get skils based on creature type
+  //functions to get skills based on creature type
   function beastSkills(type2) {
     //generate the number of skills to have
     let numOfSkills = Math.floor(Math.random() * 4) + 1
@@ -379,7 +379,7 @@ function Skills(creatureType, modifiers) {
     let skillOptions = [3, 10, 11, 16, 17]
     // generate what skills to get
     for (let i = 0; i < numOfSkills; i++) {
-      //get a random skill to genertate
+      //get a random skill to generate
       let tempSkill = Math.floor(Math.random() * 4)
       if (skills[skillOptions[tempSkill]] < 2) {
         skills[skillOptions[tempSkill]] += 1
@@ -418,5 +418,3 @@ function Display(challengeRating, creatureName, creatureSize, creatureType, alig
   console.log(`Challenge ${challengeRating}`)
   console.log(`Proficiency Bonus +${proficiencyBonus}`)
 }
-
-Main()
