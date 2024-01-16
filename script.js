@@ -33,6 +33,8 @@ function Main() {
 
 //A function to display what has been generated
 function Display(challengeRating, creatureName, creatureSize, creatureType, alignment, armorClass, hitPoints, speed, abilityScores, modifiers, savingThrows, proficiencyBonus) {
+
+  `Challenge ${challengeRating}`
   console.log(creatureName)
   console.log(creatureSize + ` ` + creatureType + `, ` + alignment)
   console.log(`Armor Class: ${armorClass}`)
@@ -48,7 +50,20 @@ function Display(challengeRating, creatureName, creatureSize, creatureType, alig
   } else {
     tempSpeedSwimText = ``
   }
-  document.getElementById('Creature-Stats').innerHTML = `Speed: ${speed[0]} ft. ${tempSpeedFlyText}${tempSpeedSwimText}`
+  document.getElementById('Creature-Stats').innerHTML = 
+  `
+  <p>${creatureName}</p>
+  <p>${creatureSize} ${creatureType} ${alignment}</p>
+  <p>Armor Class: ${armorClass}</p>
+  <p>Hit Points: ${hitPoints[0]} (${challengeRating}d${hitPoints[1] + hitPoints[1]-2}+${modifiers[2] * challengeRating})</p>
+  <p>Speed: ${speed[0]} ft. ${tempSpeedFlyText}${tempSpeedSwimText}</p>
+  <p>STR DEX CON INT WIS CHA</p>
+  <p>${abilityScores}</p>
+  <p>${modifiers}</p>
+  <p>${savingThrows}</p>
+  <p>Challenge ${challengeRating}</p>
+  <p>Proficiency Bonus +${proficiencyBonus}</p>
+  `
   console.log(`Speed: ${speed[0]} ft. ${tempSpeedFlyText}${tempSpeedSwimText}`)
   console.log(`STR DEX CON INT WIS CHA`)
   console.log(abilityScores)
