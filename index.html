@@ -6,6 +6,19 @@
   
   <title>Alowtron-DND Creature Generator</title>
   <link href="styles.css" rel="stylesheet" type="text/css" />
+  <style>
+    .creatureDisplay {
+      width: 500px;
+      margin: auto;
+      
+    }
+    .displayStats {
+      display: grid;
+      grid-template-columns: 60px 60px 60px 60px 60px 60px;
+      grid-template-rows: 30px 30px;
+      justify-items: center;
+    }
+  </style>
 </head>
   
   <body>
@@ -16,11 +29,13 @@
       <h1>
         Dungeons and Dragons Creature Generator
       </h1>
+      <div class="creatureDisplay">
+        <div id="Creature-Stats">
+        </div>
+      </div>
       <button>
         Generate Creature
       </button>
-      <div id="Creature-Stats">
-      </div>
     </main>
     <footer>
 
