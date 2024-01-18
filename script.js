@@ -33,7 +33,12 @@ function Main() {
 
 //A function to display what has been generated
 function Display(challengeRating, creatureName, creatureSize, creatureType, alignment, armorClass, hitPoints, speed, abilityScores, modifiers, savingThrows, proficiencyBonus) {
-
+  for (let i = 0; i < modifiers.length; i++) {
+    if (modifiers[i] > 0) {
+      let tempNumber = modifiers[i]
+      modifiers[i] = "+" + tempNumber
+    }
+  }
   `Challenge: ${challengeRating}`
   console.log(creatureName)
   console.log(creatureSize + ` ` + creatureType + `, ` + alignment)
@@ -59,7 +64,7 @@ function Display(challengeRating, creatureName, creatureSize, creatureType, alig
   <p>Speed: ${speed[0]} ft. ${tempSpeedFlyText}${tempSpeedSwimText}</p>
   <div class="displayStats">
   <p>STR</p><p>DEX</p><p>CON</p><p>INT</p><p>WIS</p><p>CHA</p>
-  <p>${abilityScores[0]} (${modifiers[0]})</p>
+  <p>${abilityScores[0]} (${modifiers[0]})</p><p>${abilityScores[1]} (${modifiers[1]})</p>
   
   </div>
   <p>${abilityScores}</p>
