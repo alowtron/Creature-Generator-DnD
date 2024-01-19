@@ -4,7 +4,6 @@ function Skills(creatureType, modifiers) {
     let skills = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     //array of all of the skill types
     let skillTypes = [`Acrobatics`, `Animal Handling`, `Arcana`, `Athletics`, `Deception`, `History`, `Insight`, `Intimidation`, `Investigation`, `Medicine`, `Nature`, `Perception`, `Performance`, `Persuasion`, `Religion`, `Sleight of Hand`, `Stealth`, `Survival`]
-
     //Sets the skills based on creature type
     if (creatureType[0] == `Beast`) {
         //sets skills based on secondary type

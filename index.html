@@ -8,21 +8,26 @@
   <link href="styles.css" rel="stylesheet" type="text/css" />
   <style>
     .display {
-      width: 500px;
+      width: 425px;
       margin: auto;
     }
     .creatureDisplay {
-      width: 500px;
+      width: 425px;
       margin: auto;
       
     }
     .displayStats {
-      margin-top: -16px;
+      margin-top: -5px;
       margin-bottom: 33px;
       display: grid;
-      grid-template-columns: 65px 65px 65px 65px 65px 65px;
+      grid-template-columns: 70px 70px 70px 70px 70px 70px;
       grid-template-rows: 30px 30px;
       justify-items: center;
+    }
+    .border {
+      margin-top: -10px;
+      margin-bottom: -10px;
+      border-bottom: solid;
     }
   </style>
 </head>
@@ -31,15 +36,17 @@
     <nav>
 
     </nav>
-    <main class="display">
+    <main>
       <h1>
         Dungeons and Dragons Creature Generator
       </h1>
-      <button onclick="Main()">
-        Generate Creature
-      </button>
-      <div class="creatureDisplay">
-        <div id="Creature-Stats">
+      <div class="display">
+        <button onclick="Main()">
+          Generate Creature
+        </button>
+        <div class="creatureDisplay">
+          <div id="Creature-Stats">
+          </div>
         </div>
       </div>
     </main>

@@ -41,7 +41,7 @@ function Display(challengeRating, creatureName, creatureSize, creatureType, alig
     }
   }
   //code for displaying saving throws
-  let savingThrowsDisplay = `Saving Throws:`
+  let savingThrowsDisplay = `<b>Saving Throws:</b>`
   for (let i = 0; i < savingThrows.length; i++) {
     if (savingThrows[i] > 0) {
       if (i == 0) {
@@ -76,17 +76,24 @@ function Display(challengeRating, creatureName, creatureSize, creatureType, alig
   }
   document.getElementById('Creature-Stats').innerHTML = 
   `
-  <p>Name: ${creatureName}</p>
-  <p>${creatureSize} ${creatureType}: ${alignment}</p>
-  <p>Armor Class: ${armorClass}</p>
-  <p>Hit Points: ${hitPoints[0]} (${challengeRating}d${hitPoints[1] + hitPoints[1]-2}+${modifiers[2] * challengeRating})</p>
-  <p>Speed: ${speed[0]} ft. ${tempSpeedFlyText}${tempSpeedSwimText}</p>
+  <p><b>Name:</b> ${creatureName}</p>
+  <p>${creatureSize} ${creatureType}, ${alignment}</p>
+  <div class="border"></div>
+  <p><b>Armor Class:</b> ${armorClass}</p>
+  <p><b>Hit Points:</b> ${hitPoints[0]} (${challengeRating}d${hitPoints[1] + hitPoints[1]-2}+${modifiers[2] * challengeRating})</p>
+  <p><b>Speed:</b> ${speed[0]} ft. ${tempSpeedFlyText}${tempSpeedSwimText}</p>
+  <div class="border"></div>
   <div class="displayStats">
   <p>STR</p><p>DEX</p><p>CON</p><p>INT</p><p>WIS</p><p>CHA</p>
   <p>${abilityScores[0]} (${modifiers[0]})</p><p>${abilityScores[1]} (${modifiers[1]})</p><p>${abilityScores[2]} (${modifiers[2]})</p><p>${abilityScores[3]} (${modifiers[3]})</p><p>${abilityScores[4]} (${modifiers[4]})</p><p>${abilityScores[5]} (${modifiers[5]})</p>
   </div>
+  <div class="border"></div>
   <p>${savingThrowsDisplay}</p>
-  <p>Challenge: ${challengeRating}</p>
-  <p>Proficiency Bonus: +${proficiencyBonus}</p>
+  <p><b>Challenge:</b> ${challengeRating}</p>
+  <p><b>Proficiency Bonus:</b> +${proficiencyBonus}</p>
+  <div class="border"></div>
+  
+  <div class="border"></div>
+  <p><b>Actions</b></p>
   `
 }
