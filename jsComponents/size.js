@@ -1,6 +1,6 @@
 
 //Sets the size of the creature
-function CreatureSize(creatureType, secondaryType) {
+function Size(creatureType, secondaryType) {
     //initializes creatures size var
     let creatureSize = ``
     //sets creature type if {creatureType} is beast

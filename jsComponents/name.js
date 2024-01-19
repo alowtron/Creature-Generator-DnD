@@ -1,5 +1,5 @@
 //makes a name base off of the creature type
-function CreatureName(creatureType) {
+function Name(creatureType) {
     //initializes creatures name to blank string
     let creatureName = ``
     //creates creature name based off of its creature type

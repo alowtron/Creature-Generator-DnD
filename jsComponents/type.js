@@ -1,5 +1,5 @@
 //Sets the type of the creature
-function CreatureType() {
+function Type() {
     //List of types of creatures that can be created
     let typeList = [`Beast`]
     //Assigns a creature to a creature type on the {typeList}

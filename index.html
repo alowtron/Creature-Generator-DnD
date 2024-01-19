@@ -7,14 +7,20 @@
   <title>Alowtron-DND Creature Generator</title>
   <link href="styles.css" rel="stylesheet" type="text/css" />
   <style>
+    .display {
+      width: 500px;
+      margin: auto;
+    }
     .creatureDisplay {
       width: 500px;
       margin: auto;
       
     }
     .displayStats {
+      margin-top: -16px;
+      margin-bottom: 33px;
       display: grid;
-      grid-template-columns: 60px 60px 60px 60px 60px 60px;
+      grid-template-columns: 65px 65px 65px 65px 65px 65px;
       grid-template-rows: 30px 30px;
       justify-items: center;
     }
@@ -25,26 +31,26 @@
     <nav>
 
     </nav>
-    <main>
+    <main class="display">
       <h1>
         Dungeons and Dragons Creature Generator
       </h1>
+      <button onclick="Main()">
+        Generate Creature
+      </button>
       <div class="creatureDisplay">
         <div id="Creature-Stats">
         </div>
       </div>
-      <button>
-        Generate Creature
-      </button>
     </main>
     <footer>
 
     </footer>
     <!-- Components for creature generator -->
     <script src="./jsComponents/challengeRating.js"></script>
-    <script src="./jsComponents/creatureType.js"></script>
-    <script src="./jsComponents/creatureName.js"></script>
-    <script src="./jsComponents/creatureSize.js"></script>
+    <script src="./jsComponents/type.js"></script>
+    <script src="./jsComponents/name.js"></script>
+    <script src="./jsComponents/size.js"></script>
     <script src="./jsComponents/alignment.js"></script>
     <script src="./jsComponents/abilityScores.js"></script>
     <script src="./jsComponents/modifiers.js"></script>
@@ -56,7 +62,7 @@
     <script src="./jsComponents/skills.js"></script>
     <!-- Creature generator -->
     <script src="script.js"></script>
-    <script>Main()</script>
+    <script>//Main()</script>
   </body>
   
 </html>
