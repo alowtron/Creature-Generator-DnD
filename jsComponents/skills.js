@@ -1,19 +1,18 @@
 //Sets the skills that Creature has
-function Skills(creatureType, modifiers) {
-    //initializes skills to empty arrays
+function Skills(creatureType) {
+    //initializes skills to empty arrays, "1"s will be displayed
     let skills = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     //array of all of the skill types
     let skillTypes = [`Acrobatics`, `Animal Handling`, `Arcana`, `Athletics`, `Deception`, `History`, `Insight`, `Intimidation`, `Investigation`, `Medicine`, `Nature`, `Perception`, `Performance`, `Persuasion`, `Religion`, `Sleight of Hand`, `Stealth`, `Survival`]
     //Sets the skills based on creature type
     if (creatureType[0] == `Beast`) {
         //sets skills based on secondary type
-        skills = beastSkills(creatureType[1])
-
+        beastSkills()
     }
 
 
-    //functions to get skills based on creature type
-    function beastSkills(type2) {
+    //functions to select skills based on creature type
+    function beastSkills() {
         //generate the number of skills to have
         let numOfSkills = Math.floor(Math.random() * 4) + 1
         //options for skills
@@ -21,13 +20,12 @@ function Skills(creatureType, modifiers) {
         // generate what skills to get
         for (let i = 0; i < numOfSkills; i++) {
             //get a random skill to generate
-            let tempSkill = Math.floor(Math.random() * 4)
-            if (skills[skillOptions[tempSkill]] < 2) {
-                skills[skillOptions[tempSkill]] += 1
+            let skillSelect = skillOptions[Math.floor(Math.random() * skillOptions.length)]
+            //sets skill if it has been set already
+            if (skills[skillSelect] < 1) {
+                skills[skillSelect] += 1
             }
-
         }
-        return skills
     }
 
     return skills
