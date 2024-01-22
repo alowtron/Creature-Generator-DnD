@@ -65,9 +65,50 @@ function Display(challengeRating, creatureName, creatureSize, creatureType, alig
       savingThrowsDisplay = savingThrowsDisplay.substring(0, savingThrowsDisplay.length-1)
     }
   }
+  //code to display the skills
+  let skillDisplay = SkillDisplay(skills, modifiers, proficiencyBonus)
+
+  //code for adding flight and swim
+  if (speed[1] != 0) {
+    tempSpeedFlyText = `(fly: ${speed[1]} ft.)`
+  } else {
+    tempSpeedFlyText = ``
+  }
+  if (speed[2] != 0) {
+    tempSpeedSwimText = `(swim: ${speed[2]} ft.)`
+  } else {
+    tempSpeedSwimText = ``
+  }
+  document.getElementById('Creature-Stats').innerHTML = 
+  `
+  <p><b>Name:</b> ${creatureName}</p>
+  <p>${creatureSize} ${creatureType}, ${alignment}</p>
+  <div class="border"></div>
+  <p><b>Armor Class:</b> ${armorClass}</p>
+  <p><b>Hit Points:</b> ${hitPoints[0]} (${challengeRating}d${hitPoints[1] + hitPoints[1]-2}+${modifiers[2] * challengeRating})</p>
+  <p><b>Speed:</b> ${speed[0]} ft. ${tempSpeedFlyText}${tempSpeedSwimText}</p>
+  <div class="border"></div>
+  <div class="displayStats">
+  <p>STR</p><p>DEX</p><p>CON</p><p>INT</p><p>WIS</p><p>CHA</p>
+  <p>${abilityScores[0]} (${modifiersDisplay[0]})</p><p>${abilityScores[1]} (${modifiersDisplay[1]})</p><p>${abilityScores[2]} (${modifiersDisplay[2]})</p><p>${abilityScores[3]} (${modifiersDisplay[3]})</p><p>${abilityScores[4]} (${modifiersDisplay[4]})</p><p>${abilityScores[5]} (${modifiersDisplay[5]})</p>
+  </div>
+  <div class="border"></div>
+  <p>${savingThrowsDisplay}</p>
+  <p>${skillDisplay}</p>
+  <p><b>Challenge:</b> ${challengeRating}</p>
+  <p><b>Proficiency Bonus:</b> +${proficiencyBonus}</p>
+  <div class="border"></div>
+  <p><b>Special Abilities</b></P>
+  <div class="border"></div>
+  <p><b>Actions</b></p>
+  `
+}
+
+
+function SkillDisplay(skills, modifiers, proficiencyBonus) {
   //array of all of the skill types
   let skillTypes = [`Acrobatics`, `Animal Handling`, `Arcana`, `Athletics`, `Deception`, `History`, `Insight`, `Intimidation`, `Investigation`, `Medicine`, `Nature`, `Perception`, `Performance`, `Persuasion`, `Religion`, `Sleight of Hand`, `Stealth`, `Survival`]
-  //code to display the skills
+
   let skillDisplay = `<b>Skills:</b>`
   for (let i = 0; i < skills.length; i++) {
     if (i == 0 && skills[i] == 1) {
@@ -147,39 +188,5 @@ function Display(challengeRating, creatureName, creatureSize, creatureType, alig
       skillDisplay = skillDisplay.substring(0, skillDisplay.length-1)
     }
   }
-
-  //code for adding flight and swim
-  if (speed[1] != 0) {
-    tempSpeedFlyText = `(fly: ${speed[1]} ft.)`
-  } else {
-    tempSpeedFlyText = ``
-  }
-  if (speed[2] != 0) {
-    tempSpeedSwimText = `(swim: ${speed[2]} ft.)`
-  } else {
-    tempSpeedSwimText = ``
-  }
-  document.getElementById('Creature-Stats').innerHTML = 
-  `
-  <p><b>Name:</b> ${creatureName}</p>
-  <p>${creatureSize} ${creatureType}, ${alignment}</p>
-  <div class="border"></div>
-  <p><b>Armor Class:</b> ${armorClass}</p>
-  <p><b>Hit Points:</b> ${hitPoints[0]} (${challengeRating}d${hitPoints[1] + hitPoints[1]-2}+${modifiers[2] * challengeRating})</p>
-  <p><b>Speed:</b> ${speed[0]} ft. ${tempSpeedFlyText}${tempSpeedSwimText}</p>
-  <div class="border"></div>
-  <div class="displayStats">
-  <p>STR</p><p>DEX</p><p>CON</p><p>INT</p><p>WIS</p><p>CHA</p>
-  <p>${abilityScores[0]} (${modifiersDisplay[0]})</p><p>${abilityScores[1]} (${modifiersDisplay[1]})</p><p>${abilityScores[2]} (${modifiersDisplay[2]})</p><p>${abilityScores[3]} (${modifiersDisplay[3]})</p><p>${abilityScores[4]} (${modifiersDisplay[4]})</p><p>${abilityScores[5]} (${modifiersDisplay[5]})</p>
-  </div>
-  <div class="border"></div>
-  <p>${savingThrowsDisplay}</p>
-  <p>${skillDisplay}</p>
-  <p><b>Challenge:</b> ${challengeRating}</p>
-  <p><b>Proficiency Bonus:</b> +${proficiencyBonus}</p>
-  <div class="border"></div>
-  <p><b>Special Abilities</b></P>
-  <div class="border"></div>
-  <p><b>Actions</b></p>
-  `
+  return skillDisplay
 }
