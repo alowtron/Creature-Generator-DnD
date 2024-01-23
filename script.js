@@ -26,59 +26,32 @@ function Main() {
   let savingThrows = SavingThrows(modifiers, proficiencyBonus)
   //get skills
   let skills = Skills(creatureType, modifiers)
+  //get abilities
+  let specialAbilities = SpecialAbilities(creatureType, abilityScores, modifiers, speed) 
+  //get attacks
+  // let attacks = Attacks()
+  
+
 
   //code to display creature on console
-  Display(challengeRating, creatureName, creatureSize, creatureType[0], alignment, armorClass, hitPoints, speed, abilityScores, modifiers, savingThrows, proficiencyBonus, skills)
+  Display(challengeRating, creatureName, creatureSize, creatureType[0], alignment, armorClass, hitPoints, speed, abilityScores, modifiers, savingThrows, proficiencyBonus, skills, specialAbilities)
 }
 
 //A function to display what has been generated
 function Display(challengeRating, creatureName, creatureSize, creatureType, alignment, armorClass, hitPoints, speed, abilityScores, modifiers, savingThrows, proficiencyBonus, skills) {
   //code for adding "+" in front of positive modifiers
-  let modifiersDisplay = []
-  for (let i = 0; i < modifiers.length; i++) {
-    if (modifiers[i] > 0) {
-      modifiersDisplay[i] = "+" + modifiers[i]
-    } else {
-      modifiersDisplay[i] = String(modifiers[i])
-    }
-  }
+  let modifiersDisplay = ModifiersDisplay(modifiers)
+  
   //code for displaying saving throws
-  let savingThrowsDisplay = `<b>Saving Throws:</b>`
-  for (let i = 0; i < savingThrows.length; i++) {
-    if (savingThrows[i] > 0) {
-      if (i == 0) {
-        savingThrowsDisplay += ` STR: +${savingThrows[i]},`
-      } else if (i == 1) {
-        savingThrowsDisplay += ` DEX: +${savingThrows[i]},`
-      } else if (i == 2) {
-        savingThrowsDisplay += ` CON: +${savingThrows[i]},`
-      } else if (i == 3) {
-        savingThrowsDisplay += ` INT: +${savingThrows[i]},`
-      } else if (i == 4) {
-        savingThrowsDisplay += ` WIS: +${savingThrows[i]},`
-      } else if (i == 5) {
-        savingThrowsDisplay += ` CHA: +${savingThrows[i]},`
-      }
-    }
-    //check to see if anything is in array
-    if (i == savingThrows.length - 1) {
-      savingThrowsDisplay = savingThrowsDisplay.substring(0, savingThrowsDisplay.length-1)
-    }
-  }
+  let savingThrowsDisplay = SavingThrowsDisplay(savingThrows)
+  
   //code to display the skills
   let skillDisplay = SkillDisplay(skills, modifiers, proficiencyBonus)
 
   //code for adding flight and swim
-  if (speed[1] != 0) {
-    tempSpeedFlyText = `(fly: ${speed[1]} ft.)`
-  } else {
-    tempSpeedFlyText = ``
-  }
-  if (speed[2] != 0) {
-    tempSpeedSwimText = `(swim: ${speed[2]} ft.)`
-  } else {
-    tempSpeedSwimText = ``
-  }
+  let tempSpeedFlyText = TempSpeedFlyText(speed)
+  let tempSpeedSwimText = TempSpeedSwimText(speed)
+  
   document.getElementById('Creature-Stats').innerHTML = 
   `
   <p><b>Name:</b> ${creatureName}</p>
@@ -104,6 +77,63 @@ function Display(challengeRating, creatureName, creatureSize, creatureType, alig
   `
 }
 
+function TempSpeedFlyText(speed){
+  let tempSpeedFlyText = ``
+  if (speed[1] != 0) {
+    tempSpeedFlyText = `(fly: ${speed[1]} ft.)`
+  } else {
+    tempSpeedFlyText = ``
+  }
+  return tempSpeedFlyText
+}
+
+function TempSpeedSwimText(speed) {
+  let tempSpeedSwimText = ``
+  if (speed[2] != 0) {
+    tempSpeedSwimText = `(swim: ${speed[2]} ft.)`
+  } else {
+    tempSpeedSwimText = ``
+  }
+  return tempSpeedSwimText
+}
+
+function ModifiersDisplay(modifiers) {
+  let modifiersDisplay = []
+  for (let i = 0; i < modifiers.length; i++) {
+    if (modifiers[i] > 0) {
+      modifiersDisplay[i] = "+" + modifiers[i]
+    } else {
+      modifiersDisplay[i] = String(modifiers[i])
+    }
+  }
+  return modifiersDisplay
+}
+
+function SavingThrowsDisplay(savingThrows) {
+  let savingThrowsDisplay = `<b>Saving Throws:</b>`
+  for (let i = 0; i < savingThrows.length; i++) {
+    if (savingThrows[i] > 0) {
+      if (i == 0) {
+        savingThrowsDisplay += ` STR: +${savingThrows[i]},`
+      } else if (i == 1) {
+        savingThrowsDisplay += ` DEX: +${savingThrows[i]},`
+      } else if (i == 2) {
+        savingThrowsDisplay += ` CON: +${savingThrows[i]},`
+      } else if (i == 3) {
+        savingThrowsDisplay += ` INT: +${savingThrows[i]},`
+      } else if (i == 4) {
+        savingThrowsDisplay += ` WIS: +${savingThrows[i]},`
+      } else if (i == 5) {
+        savingThrowsDisplay += ` CHA: +${savingThrows[i]},`
+      }
+    }
+    //check to see if anything is in array
+    if (i == savingThrows.length - 1) {
+      savingThrowsDisplay = savingThrowsDisplay.substring(0, savingThrowsDisplay.length-1)
+    }
+  }
+  return savingThrowsDisplay
+}
 
 function SkillDisplay(skills, modifiers, proficiencyBonus) {
   //array of all of the skill types
