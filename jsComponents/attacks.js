@@ -40,9 +40,33 @@ function Attacks(challengeRating, creatureType, creatureName, creatureSize, modi
     let attackDiceNumber = 1
     if (creatureSize == "Tiny") {
         attackDice = 4
-        if (challengeRating >= 5) {
+        if (challengeRating >= 15) {
+            attackDiceNumber = 3
+        } else if (challengeRating >= 5) [
+            attackDiceNumber = 2
+        ]
+    } else if (creatureSize == "Small") {
+        attackDice = 6
+        if (challengeRating >= 10) {
             attackDiceNumber = 2
         }
+    } else if (creatureSize == "Medium") {
+        attackDice = 8
+        if (challengeRating >= 13) {
+            attackDiceNumber = 2
+        }
+    } else if (creatureSize == "Large") {
+        attackDice = 10
+        if (challengeRating >= 20) {
+            attackDiceNumber = 2
+        }
+    } else if (creatureSize == "Huge") {
+        attackDice = 12
+        if (challengeRating >= 25) {
+            attackDiceNumber = 2
+        }
+    } else {
+        attackDice = 20
     }
     //parse {specialAbilities[1]}
     for (let i = 0; i <= specialAbilities.length; i++) {
@@ -56,6 +80,12 @@ function Attacks(challengeRating, creatureType, creatureName, creatureSize, modi
             damageType = 'slashing'
             range = 5
             attacksText[attacksTextPos] = `<p><b>Claws: </b> +${attackToHit} to hit, range: ${range} ft., ${attackDiceNumber}d${attackDice}+${modifierDamage} ${damageType} damage. </p>`
+            attacksTextPos++
+        }
+        if (specialAbilities[1][i] == 'peck') {
+            damageType = "piercing"
+            range = 5
+            attacksText[attacksTextPos] = `<p><b>Peck: </b> +${attackToHit} to hit, range: ${range} ft., ${attackDiceNumber}d${attackDice}+${modifierDamage} ${damageType} damage. </p>`
             attacksTextPos++
         }
     }
