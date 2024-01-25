@@ -29,16 +29,16 @@ function Main() {
   //get abilities
   let specialAbilities = SpecialAbilities(challengeRating, creatureType, creatureName, abilityScores, modifiers, speed) 
   //get attacks
-  // let attacks = Attacks()
+  let attacks = Attacks(challengeRating, creatureType, creatureName, creatureSize, modifiers, proficiencyBonus, specialAbilities)
   
 
 
   //code to display creature on console
-  Display(challengeRating, creatureName, creatureSize, creatureType[0], alignment, armorClass, hitPoints, speed, abilityScores, modifiers, savingThrows, proficiencyBonus, skills, specialAbilities)
+  Display(challengeRating, creatureName, creatureSize, creatureType[0], alignment, armorClass, hitPoints, speed, abilityScores, modifiers, savingThrows, proficiencyBonus, skills, specialAbilities, attacks)
 }
 
 //A function to display what has been generated
-function Display(challengeRating, creatureName, creatureSize, creatureType, alignment, armorClass, hitPoints, speed, abilityScores, modifiers, savingThrows, proficiencyBonus, skills, specialAbilities) {
+function Display(challengeRating, creatureName, creatureSize, creatureType, alignment, armorClass, hitPoints, speed, abilityScores, modifiers, savingThrows, proficiencyBonus, skills, specialAbilities, attacks) {
   //code for adding "+" in front of positive modifiers
   let modifiersDisplay = ModifiersDisplay(modifiers)
   
@@ -75,6 +75,8 @@ function Display(challengeRating, creatureName, creatureSize, creatureType, alig
   ${specialAbilities[0]}
   <div class="border"></div>
   <p><b>Actions</b></p>
+  ${attacks[0]}
+  ${attacks[1][0]}
   `
 }
 

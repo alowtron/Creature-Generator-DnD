@@ -1,5 +1,5 @@
 function SpecialAbilities(challengeRating, creatureType, creatureName, abilityScores, modifiers, speed) {
-    let specialAbilities = null
+    
     //list of special abilities a creature might have.
     let bite = false
     let claws = false
@@ -33,15 +33,32 @@ function SpecialAbilities(challengeRating, creatureType, creatureName, abilitySc
         if (extraDamage <= 0) {
             extraDamage = 1
         }
-        if (bite == true && randomNumber3) {
-            specialAbilitiesText += `<p><b>Charge:</b> Whenever the ${creatureName} moves at least 20ft in a line towards before making an attack, it deals an extra ${extraDamage}d6 damage.</p>`
+        if (bite == true && randomNumber3 == 0) {
+            specialAbilitiesText += `<p><b>Charge:</b> Whenever the ${creatureName} moves at least 20ft in a straight line towards the target before making an attack, it deals an extra ${extraDamage}d6 damage.</p>`
         }
-        console.log(specialAbilitiesText)
+        if (claws == true && randomNumber3 == 0) {
+            specialAbilitiesText += `<p><b>Pounce:</b> Whenever the ${creatureName} moves at least 10ft in a straight line towards the target before making an attack, it deals an extra ${extraDamage}d6 damage.</p>`
+            if (randomNumber2 == 0 && creatureType[1] == 'Air') {
+                specialAbilitiesText += `<p><b>Fly By:</b> Whenever the ${creatureName} makes a attack on their turn, the rest of the movement on their turn does not provoke opportunity attacks.</p>`
+            }
+        }
     }
 
+    //parse the information from all of the special abilities in this function
+    let specialAbilities = []
+    if (bite == true) {
+        specialAbilities.push("bite")
+    }
+    if (claws == true) {
+        specialAbilities.push("claws")
+    }
+    if (peck == true) {
+        specialAbilities.push("peck")
+    }
 
-    console.log(`bite: ${bite}`)
-    console.log(`claws: ${claws}`)
-    console.log(`peck; ${peck}`)
-    return [specialAbilitiesText]//specialAbilities
+    //checks to see if {specialAbilitiesText} is empty and if it is, take and set it to "N/A"
+    if (specialAbilitiesText == "") {
+        specialAbilitiesText = "<p>N/A</p>"
+    }
+    return [specialAbilitiesText, specialAbilities]//specialAbilities
 }
