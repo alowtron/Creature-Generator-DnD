@@ -52,6 +52,9 @@ function Display(challengeRating, creatureName, creatureSize, creatureType, alig
   let tempSpeedFlyText = TempSpeedFlyText(speed)
   let tempSpeedSwimText = TempSpeedSwimText(speed)
   
+  //display all of the attacks
+  let attacksDisplay = AttacksDisplay(attacks)
+
   document.getElementById('Creature-Stats').innerHTML = 
   `
   <p><b>Name:</b> ${creatureName}</p>
@@ -76,8 +79,19 @@ function Display(challengeRating, creatureName, creatureSize, creatureType, alig
   <div class="border"></div>
   <p><b>Actions</b></p>
   ${attacks[0]}
-  ${attacks[1][0]}
+  ${attacksDisplay}
+  
   `
+}
+
+function AttacksDisplay(attacks) {
+  let attacksDisplay = ``
+  let i = 0
+  while (attacks[1][i] != undefined) {
+    attacksDisplay += attacks[1][i]
+    i++
+  }
+  return attacksDisplay
 }
 
 function TempSpeedFlyText(speed){

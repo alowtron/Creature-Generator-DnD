@@ -40,7 +40,6 @@ function Attacks(challengeRating, creatureType, creatureName, creatureSize, modi
     let attackDiceNumber = 1
     if (creatureSize == "Tiny") {
         attackDice = 4
-        range = 5
         if (challengeRating >= 5) {
             attackDiceNumber = 2
         }
@@ -48,7 +47,15 @@ function Attacks(challengeRating, creatureType, creatureName, creatureSize, modi
     //parse {specialAbilities[1]}
     for (let i = 0; i <= specialAbilities.length; i++) {
         if (specialAbilities[1][i] == 'bite') {
+            damageType = "piercing"
+            range = 5
             attacksText[attacksTextPos] = `<p><b>Bite: </b> +${attackToHit} to hit, range: ${range} ft., ${attackDiceNumber}d${attackDice}+${modifierDamage} ${damageType} damage. </p>`
+            attacksTextPos++
+        }
+        if (specialAbilities[1][i] == 'claws') {
+            damageType = 'slashing'
+            range = 5
+            attacksText[attacksTextPos] = `<p><b>Claws: </b> +${attackToHit} to hit, range: ${range} ft., ${attackDiceNumber}d${attackDice}+${modifierDamage} ${damageType} damage. </p>`
             attacksTextPos++
         }
     }
