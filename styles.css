@@ -100,15 +100,17 @@ a {
 }
 
 button {
-    background-color: #242424;
+    /* background-color: #242424; */
     border: none;
     border-radius: .3rem;
-    color: silver;
+    color: #242424;
+    background-color: silver;
+    
     padding: 0.5rem;
 }
 
 button:hover {
-    background-color: #202835;
+    background-color: grey;
 }
 /* Main body mobile */
 @media only screen and (max-width: 1000px) {
