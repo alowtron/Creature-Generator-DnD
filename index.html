@@ -78,15 +78,22 @@
         <h3>Creature Type</h3>
         
         
-        <select name="idCreatureType" title="idCreatureType" oninput="SelectedCreatureType(value)">
+        <select id="idCreatureType" title="idCreatureType" oninput="SelectedCreatureType(value)">
           <option value="random">Random</option>"
           <option value="beast">Beast</option>
         </select>
-        <div id="idCreatureType2"></div>
+        
+        <div id="divCreatureType2">
+          <div id="idCreatureType2"></div>
+        </div>
+        <div id="divCreatureOption1">
+          <div id="idCreatureOption1"></div>
+        </div>
+        
         <hr>
         <h3>Challenge Rating</h3>
         
-        <select name="idChallengeRating" title="idChallengeRating">
+        <select id="idChallengeRating" title="idChallengeRating">
           <option value="random">Random</option>
           <option value="1">1</option>
           <option value="2">2</option>
@@ -121,10 +128,11 @@
         </select>
 
         <hr>
-
-        <button onclick="Main()">
+        
+        <button onclick="Main(idCreatureType.value, idCreatureType2.value)">
           Generate Creature
         </button>
+        <hr>
         <div class="creatureDisplay">
           <div id="Creature-Stats">
           </div>
@@ -153,7 +161,6 @@
     <!-- Creature generator -->
     <script src="./jsComponents/select.js"></script>
     <script src="script.js"></script>
-    <script>//Main()</script>
   </body>
   
 </html>

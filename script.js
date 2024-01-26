@@ -1,9 +1,9 @@
 //Main class that calls all other function, this class is the only one that is called at the end.
-function Main() {
+function Main(idCreatureType, idCreatureType2) {
   //gets the challenge rating for creature
   let challengeRating = ChallengeRating()
   //gets the type of the creature'
-  let creatureType = Type()
+  let creatureType = Type(idCreatureType, idCreatureType2)
   //gets a name based off of creature type
   let creatureName = Name(creatureType[0])
   //gets the size of the creature based off the creature type
