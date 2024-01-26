@@ -42,7 +42,20 @@
       height: 30px;
       width: 100px;
       border-radius: 0.3rem;
+      /* display: block;
+      margin: auto;
+      text-align: center; */
     }
+    /* h2 {
+      text-align: center;
+    }
+    h3 {
+      text-align: center;
+    }
+    button {
+      display: block;
+      margin: auto;
+    } */
 
   </style>
 </head>
@@ -65,10 +78,11 @@
         <h3>Creature Type</h3>
         
         
-        <select name="idCreatureType" title="idCreatureType" oninput="Main()">
+        <select name="idCreatureType" title="idCreatureType" oninput="SelectedCreatureType(value)">
           <option value="random">Random</option>"
           <option value="beast">Beast</option>
         </select>
+        <div id="idCreatureType2"></div>
         <hr>
         <h3>Challenge Rating</h3>
         
@@ -137,6 +151,7 @@
     <script src="./jsComponents/specialAbilities.js"></script>
     <script src="./jsComponents/attacks.js"></script>
     <!-- Creature generator -->
+    <script src="./jsComponents/select.js"></script>
     <script src="script.js"></script>
     <script>//Main()</script>
   </body>
