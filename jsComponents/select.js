@@ -1,6 +1,6 @@
 function SelectedCreatureType(selectedCreatureType) {
     if (selectedCreatureType == "random") {
-        document.getElementById("divCreatureType2").innerHTML = ''
+        document.getElementById("divCreatureType2").innerHTML = '<div id="idCreatureType2"></div>'
     } else {
         document.getElementById("divCreatureType2").innerHTML = 
         `
