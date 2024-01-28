@@ -79,17 +79,30 @@
         
         
         <select id="idCreatureType" title="idCreatureType" oninput="SelectedCreatureType(value)">
-          <option value="random">Random</option>"
+          <option value="random">Random</option>
           <option value="beast">Beast</option>
         </select>
         
         <div id="divCreatureType2">
           <div id="idCreatureType2"></div>
         </div>
+
+        <div id="divCreatureType3">
+          <div id="idCreatureType3"></div>
+        </div>
+
         <div id="divCreatureOption1">
           <div id="idCreatureOption1"></div>
         </div>
         
+        <div id="divCreatureOption2">
+          <div id="idCreatureOption2"></div>
+        </div>
+
+        <div id="divCreatureOption3">
+          <div id="idCreatureOption3"></div>
+        </div>
+
         <hr>
         <h3>Challenge Rating</h3>
         
@@ -128,8 +141,18 @@
         </select>
 
         <hr>
+        <h3>Advance Options</h3>
+        <div id="divAdvanceOptionsToggle">
+          <button onclick="AdvanceOptions(value)" value="false">
+            Toggle Advance Options
+          </button>
+        </div>
         
-        <button onclick="Main(idCreatureType.value, idCreatureType2.value)">
+        <div id="divAdvanceOptions">
+          <div id="idAdvanceOptions"></div>
+        </div>
+        <hr>
+        <button onclick="Main(idChallengeRating.value, idCreatureType.value, idCreatureType2.value)">
           Generate Creature
         </button>
         <hr>
@@ -159,7 +182,9 @@
     <script src="./jsComponents/specialAbilities.js"></script>
     <script src="./jsComponents/attacks.js"></script>
     <!-- Creature generator -->
-    <script src="./jsComponents/select.js"></script>
+    <script src="./select/select.js"></script>
+    <script src="./select/selectCreatureType.js"></script>
+    <script src="./select/advanceOptions.js"></script>
     <script src="script.js"></script>
   </body>
   

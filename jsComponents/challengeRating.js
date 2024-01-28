@@ -1,11 +1,13 @@
 //Sets the challenge rating
-function ChallengeRating() {
+function ChallengeRating(idChallengeRating) {
     //Sets the challenge rating to temporary var
     //can change to random for a random cr or prompt the user for a cr
-    let challengeRating = 20
+    let challengeRating = 1
     //if {challengeRating} is random create a random cr
-    if (challengeRating == 'random') {
+    if (idChallengeRating == 'random') {
       challengeRating = Math.floor(Math.random() * 30 + 1)
+    } else {
+      challengeRating = idChallengeRating
     }
     return challengeRating
 }
