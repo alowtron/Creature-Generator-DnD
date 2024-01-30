@@ -1,5 +1,5 @@
 //Main class that calls all other function, this class is the only one that is called at the end.
-function Main(idChallengeRating, idCreatureType, idCreatureType2) {
+function Main(idChallengeRating, idCreatureType, idCreatureType2, idStr, idDex, idCon, idInt, idWis, idCha) {
   //gets the challenge rating for creature
   let challengeRating = ChallengeRating(idChallengeRating)
   //gets the type of the creature'
@@ -11,7 +11,7 @@ function Main(idChallengeRating, idCreatureType, idCreatureType2) {
   //gets the alignment of a creature based off the creature type
   let alignment = Alignment(creatureType[0])
   //gets the ability scores for the creature
-  let abilityScores = AbilityScores(creatureType[0], creatureSize)
+  let abilityScores = AbilityScores(creatureType[0], creatureSize, idStr, idDex, idCon, idInt, idWis, idCha)
   //gets the modifiers for ability scores
   let modifiers = Modifiers(abilityScores)
   //gets the armor class of the creature

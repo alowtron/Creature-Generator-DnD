@@ -90,6 +90,7 @@
         <div id="divCreatureType3">
           <div id="idCreatureType3"></div>
         </div>
+        <!-- creature size -->
 
         <div id="divCreatureOption1">
           <div id="idCreatureOption1"></div>
@@ -139,6 +140,8 @@
           <option value="29">29</option>
           <option value="30">30</option>
         </select>
+        
+        
 
         <hr>
         <h3>Advance Options</h3>
@@ -150,9 +153,29 @@
         
         <div id="divAdvanceOptions">
           <div id="idAdvanceOptions"></div>
+          <!-- Modifiers for six core stats -->
+          <div id="divStr">
+            <div id="idStr"></div>
+          </div>
+          <div id="divDex">
+            <div id="idDex"></div>
+          </div>
+          <div id="divCon">
+            <div id="idCon"></div>
+          </div>
+          <div id="divInt">
+            <div id="idInt"></div>
+          </div>
+          <div id="divWis">
+            <div id="idWis"></div>
+          </div>
+          <div id="divCha">
+            <div id="idCha"></div>
+          </div>
+          
         </div>
         <hr>
-        <button onclick="Main(idChallengeRating.value, idCreatureType.value, idCreatureType2.value)">
+        <button onclick="Main(idChallengeRating.value, idCreatureType.value, idCreatureType2.value, idStr.value, idDex.value, idCon.value, idInt.value, idWis.value, idCha.value)">
           Generate Creature
         </button>
         <hr>

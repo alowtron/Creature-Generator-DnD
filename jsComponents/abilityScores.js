@@ -1,5 +1,5 @@
 //Sets the ability score of the creature
-function AbilityScores(creatureType, creatureSize) {
+function AbilityScores(creatureType, creatureSize, idStr, idDex, idCon, idInt, idWis, idCha) {
     /*This part of the code works by calling a function based off of the type of creature, and the function creates a value based off of the size and type of the creature*/
     //initializes all of the ability scores to 0
     let abilityScores = [0, 0, 0, 0, 0, 0]
@@ -13,30 +13,102 @@ function AbilityScores(creatureType, creatureSize) {
     function BeastScores() {
         //Size based
         if (creatureSize == `Tiny`) {
-            abilityScores[0] = StrTiny()
-            abilityScores[1] = DexTiny()
-            abilityScores[2] = ConTiny()
+            if (idStr == null || idStr == 'random') {
+                abilityScores[0] = StrTiny()
+            } else {
+                abilityScores[0] = idStr
+            }
+            if (idDex == null || idDex == 'random') {
+                abilityScores[1] = DexTiny()
+            } else {
+                abilityScores[1] = idDex
+            }
+            if (idCon == null || idCon == 'random') {
+                abilityScores[2] = ConTiny()
+            } else {
+                abilityScores[2] = idCon
+            }
         } else if (creatureSize == `Small`) {
-            abilityScores[0] = StrSmall()
-            abilityScores[1] = DexSmall()
-            abilityScores[2] = ConSmall()
+            if (idStr == null || idStr == 'random') {
+                abilityScores[0] = StrSmall()
+            } else {
+                abilityScores[0] = idStr
+            }
+            if (idDex == null || idDex == 'random') {
+                abilityScores[1] = DexSmall()
+            } else {
+                abilityScores[1] = idDex
+            }
+            if (idCon == null || idCon == 'random') {
+                abilityScores[2] = ConSmall()
+            } else {
+                abilityScores[2] = idCon
+            }
         } else if (creatureSize == `Medium`) {
-            abilityScores[0] = StrMedium()
-            abilityScores[1] = DexMedium()
-            abilityScores[2] = ConMedium()
+            if (idStr == null || idStr == 'random') {
+                abilityScores[0] = StrMedium()
+            } else {
+                abilityScores[0] = idStr
+            }
+            if (idDex == null || idDex == 'random') {
+                abilityScores[1] = DexMedium()
+            } else {
+                abilityScores[1] = idDex
+            }
+            if (idCon == null || idCon == 'random') {
+                abilityScores[2] = ConMedium()
+            } else {
+                abilityScores[2] = idCon
+            }
         } else if (creatureSize == `Large`) {
-            abilityScores[0] = StrLarge()
-            abilityScores[1] = DexLarge()
-            abilityScores[2] = ConLarge()
+            if (idStr == null || idStr == 'random') {
+                abilityScores[0] = StrLarge()
+            } else {
+                abilityScores[0] = idStr
+            }
+            if (idDex == null || idDex == 'random') {
+                abilityScores[1] = DexLarge()
+            } else {
+                abilityScores[1] = idDex
+            }
+            if (idCon == null || idCon == 'random') {
+                abilityScores[2] = ConLarge()
+            } else {
+                abilityScores[2] = idCon
+            }
         } else if (creatureSize == `Huge`) {
-            abilityScores[0] = StrHuge()
-            abilityScores[1] = DexHuge()
-            abilityScores[2] = ConHuge()
+            if (idStr == null || idStr == 'random') {
+                abilityScores[0] = StrHuge()
+            } else {
+                abilityScores[0] = idStr
+            }
+            if (idDex == null || idDex == 'random') {
+                abilityScores[1] = DexHuge()
+            } else {
+                abilityScores[1] = idDex
+            }
+            if (idCon == null || idCon == 'random') {
+                abilityScores[2] = ConHuge()
+            } else {
+                abilityScores[2] = idCon
+            }
         }
         //INT, WIS, and CHA
-        abilityScores[3] = IntBeast()
-        abilityScores[4] = WisBeast()
-        abilityScores[5] = ChaBeast()
+        if (idInt == null || idInt == 'random') {
+            abilityScores[3] = IntBeast()
+        } else {
+            abilityScores[3] = idInt
+        }
+        if (idWis == null || idWis == 'random') {
+            abilityScores[4] = WisBeast()
+        } else {
+            abilityScores[4] = idWis
+        }
+        if (idCha == null || idCha == 'random') {
+            abilityScores[5] = ChaBeast()
+        } else {
+            abilityScores[5] = idCha
+        }
     }
 
     //function for finding abilities of creatures
