@@ -79,7 +79,7 @@ function Attacks(challengeRating, creatureType, creatureName, creatureSize, modi
         if (specialAbilities[1][i] == 'claws') {
             damageType = 'slashing'
             range = 5
-            attacksText[attacksTextPos] = `<p><b>Claws: </b> +${attackToHit} to hit, range: ${range} ft., ${attackDiceNumber}d${attackDice}+${modifierDamage} ${damageType} damage. </p>`
+            attacksText[attacksTextPos] = `<p><b>Claws: </b> <b class="roll" onclick="Roll(20, ${attackToHit}, 'Claws')">+${attackToHit}</b> to hit, range: ${range} ft., ${attackDiceNumber}d${attackDice}+${modifierDamage} ${damageType} damage. </p>`
             attacksTextPos++
         }
         if (specialAbilities[1][i] == 'peck') {

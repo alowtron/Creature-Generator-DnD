@@ -242,7 +242,7 @@ function SkillDisplay(skills, modifiers, proficiencyBonus) {
   return skillDisplay
 }
 
-function Roll(size, number, skill) {
-  let randomNumber = Math.floor(Math.random() * size) + 1
-  alert(`(1d${size}) ${randomNumber} + (${skill}) ${number} = ${randomNumber + number}`)
+function Roll(diceSize, modifier, skillName) {
+  let randomNumber = Math.floor(Math.random() * diceSize) + 1
+  alert(`(1d${diceSize}) ${randomNumber} + (${skillName}) ${modifier} = ${randomNumber + modifier}`)
 }
