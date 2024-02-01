@@ -65,7 +65,12 @@ function Display(challengeRating, creatureName, creatureSize, creatureType, alig
   <div class="border"></div>
   <div class="displayStats">
   <p>STR</p><p>DEX</p><p>CON</p><p>INT</p><p>WIS</p><p>CHA</p>
-  <p>${abilityScores[0]} (${modifiersDisplay[0]})</p><p>${abilityScores[1]} (${modifiersDisplay[1]})</p><p>${abilityScores[2]} (${modifiersDisplay[2]})</p><p>${abilityScores[3]} (${modifiersDisplay[3]})</p><p>${abilityScores[4]} (${modifiersDisplay[4]})</p><p>${abilityScores[5]} (${modifiersDisplay[5]})</p>
+  <p class="roll" onclick="Roll(20, ${modifiers[0]}, 'STR')">${abilityScores[0]} (${modifiersDisplay[0]})</p>
+  <p class="roll" onclick="Roll(20, ${modifiers[1]}, 'DEX')">${abilityScores[1]} (${modifiersDisplay[1]})</p>
+  <p class="roll" onclick="Roll(20, ${modifiers[2]}, 'CON')">${abilityScores[2]} (${modifiersDisplay[2]})</p>
+  <p class="roll" onclick="Roll(20, ${modifiers[3]}, 'INT')">${abilityScores[3]} (${modifiersDisplay[3]})</p>
+  <p class="roll" onclick="Roll(20, ${modifiers[4]}, 'WIS')">${abilityScores[4]} (${modifiersDisplay[4]})</p>
+  <p class="roll" onclick="Roll(20, ${modifiers[5]}, 'CHA')">${abilityScores[5]} (${modifiersDisplay[5]})</p>
   </div>
   <div class="border"></div>
   <p>${savingThrowsDisplay}</p>
@@ -235,4 +240,9 @@ function SkillDisplay(skills, modifiers, proficiencyBonus) {
     }
   }
   return skillDisplay
+}
+
+function Roll(size, number, skill) {
+  let randomNumber = Math.floor(Math.random() * size) + 1
+  alert(`(1d${size}) ${randomNumber} + (${skill}) ${number} = ${randomNumber + number}`)
 }
