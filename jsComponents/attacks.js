@@ -73,19 +73,19 @@ function Attacks(challengeRating, creatureType, creatureName, creatureSize, modi
         if (specialAbilities[1][i] == 'bite') {
             damageType = "piercing"
             range = 5
-            attacksText[attacksTextPos] = `<p><b>Bite: </b> +${attackToHit} to hit, range: ${range} ft., ${attackDiceNumber}d${attackDice}+${modifierDamage} ${damageType} damage. </p>`
+            attacksText[attacksTextPos] = `<p><b>Bite: </b> <b class="roll" onclick="Roll(20, ${attackToHit}, 'Bite')">+${attackToHit}</b> to hit, range: ${range} ft., <b class="roll" onclick="Roll(${attackDice}, ${modifierDamage}, 'Modifier', ${attackDiceNumber})">${attackDiceNumber}d${attackDice}+${modifierDamage}</b> ${damageType} damage. </p>`
             attacksTextPos++
         }
         if (specialAbilities[1][i] == 'claws') {
             damageType = 'slashing'
             range = 5
-            attacksText[attacksTextPos] = `<p><b>Claws: </b> <b class="roll" onclick="Roll(20, ${attackToHit}, 'Claws')">+${attackToHit}</b> to hit, range: ${range} ft., ${attackDiceNumber}d${attackDice}+${modifierDamage} ${damageType} damage. </p>`
+            attacksText[attacksTextPos] = `<p><b>Claws: </b> <b class="roll" onclick="Roll(20, ${attackToHit}, 'Claws')">+${attackToHit}</b> to hit, range: ${range} ft., <b class="roll" onclick="Roll(${attackDice}, ${modifierDamage}, 'Modifier', ${attackDiceNumber})">${attackDiceNumber}d${attackDice}+${modifierDamage}</b> ${damageType} damage. </p>`
             attacksTextPos++
         }
         if (specialAbilities[1][i] == 'peck') {
             damageType = "piercing"
             range = 5
-            attacksText[attacksTextPos] = `<p><b>Peck: </b> +${attackToHit} to hit, range: ${range} ft., ${attackDiceNumber}d${attackDice}+${modifierDamage} ${damageType} damage. </p>`
+            attacksText[attacksTextPos] = `<p><b>Peck: </b> <b class="roll" onclick="Roll(10, ${attackToHit}, 'Peck')">+${attackToHit}</b> to hit, range: ${range} ft., <b class="roll" onclick="Roll(${attackDice}, ${modifierDamage}, 'Modifier', ${attackDiceNumber})">${attackDiceNumber}d${attackDice}+${modifierDamage}</b> ${damageType} damage. </p>`
             attacksTextPos++
         }
     }

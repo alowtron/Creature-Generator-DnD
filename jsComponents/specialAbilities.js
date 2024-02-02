@@ -33,12 +33,12 @@ function SpecialAbilities(challengeRating, creatureType, creatureName, abilitySc
             extraDamage = 1
         }
         if ((bite == true && randomNumber3 == 0) || idSpecialAbilities1 == 'charge') {
-            specialAbilitiesText += `<p><b>Charge:</b> Whenever the ${creatureName} moves at least 20ft in a straight line towards the target before making an attack, it deals an extra ${extraDamage}d6 damage.</p>`
+            specialAbilitiesText += `<p><b>Charge:</b> Whenever the ${creatureName} moves at least 20ft in a straight line towards the target before making an attack, it deals an extra <b class="roll" onclick="Roll(6, 0, '', ${extraDamage})">${extraDamage}d6</b> damage.</p>`
         }
         if (idSpecialAbilities1 == 'flyby') {
             specialAbilitiesText += `<p><b>Fly By:</b> Whenever the ${creatureName} makes a attack on their turn, the rest of the movement on their turn does not provoke opportunity attacks.</p>`
         } else if ((claws == true && randomNumber3 == 0) || idSpecialAbilities1 == 'pounce') {
-            specialAbilitiesText += `<p><b>Pounce:</b> Whenever the ${creatureName} moves at least 10ft in a straight line towards the target before making an attack, it deals an extra ${extraDamage}d6 damage.</p>`
+            specialAbilitiesText += `<p><b>Pounce:</b> Whenever the ${creatureName} moves at least 10ft in a straight line towards the target before making an attack, it deals an extra <b class="roll" onclick="Roll(6, 0, '', ${extraDamage})">${extraDamage}d6</b> damage.</p>`
             if (randomNumber2 == 0 && creatureType[1] == 'Air') {
                 specialAbilitiesText += `<p><b>Fly By:</b> Whenever the ${creatureName} makes a attack on their turn, the rest of the movement on their turn does not provoke opportunity attacks.</p>`
             }

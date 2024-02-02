@@ -135,17 +135,17 @@ function SavingThrowsDisplay(savingThrows) {
   for (let i = 0; i < savingThrows.length; i++) {
     if (savingThrows[i] > 0) {
       if (i == 0) {
-        savingThrowsDisplay += ` STR: +${savingThrows[i]},`
+        savingThrowsDisplay += ` STR: <b class="roll" onclick="Roll(20, ${savingThrows[i]}, 'STR')">+${savingThrows[i]}</b>,`
       } else if (i == 1) {
-        savingThrowsDisplay += ` DEX: +${savingThrows[i]},`
+        savingThrowsDisplay += ` DEX: <b class="roll" onclick="Roll(20, ${savingThrows[i]}, 'DEX')">+${savingThrows[i]}</b>,`
       } else if (i == 2) {
-        savingThrowsDisplay += ` CON: +${savingThrows[i]},`
+        savingThrowsDisplay += ` CON: <b class="roll" onclick="Roll(20, ${savingThrows[i]}, 'CON')">+${savingThrows[i]}</b>,`
       } else if (i == 3) {
-        savingThrowsDisplay += ` INT: +${savingThrows[i]},`
+        savingThrowsDisplay += ` INT: <b class="roll" onclick="Roll(20, ${savingThrows[i]}, 'INT')">+${savingThrows[i]}</b>,`
       } else if (i == 4) {
-        savingThrowsDisplay += ` WIS: +${savingThrows[i]},`
+        savingThrowsDisplay += ` WIS: <b class="roll" onclick="Roll(20, ${savingThrows[i]}, 'WIS')">+${savingThrows[i]}</b>,`
       } else if (i == 5) {
-        savingThrowsDisplay += ` CHA: +${savingThrows[i]},`
+        savingThrowsDisplay += ` CHA: <b class="roll" onclick="Roll(20, ${savingThrows[i]}, 'CHA')">+${savingThrows[i]}</b>,`
       }
     }
     //check to see if anything is in array
@@ -164,75 +164,75 @@ function SkillDisplay(skills, modifiers, proficiencyBonus) {
   for (let i = 0; i < skills.length; i++) {
     if (i == 0 && skills[i] == 1) {
       if ((modifiers[1] + proficiencyBonus) > 0) {
-        skillDisplay += ` Acrobatics +` + (modifiers[1] + proficiencyBonus) + `,`
+        skillDisplay += ` Acrobatics <b class="roll" onclick="Roll(20, ${(modifiers[1] + proficiencyBonus)}, 'Acrobatics')">+` + (modifiers[1] + proficiencyBonus) + `</b>,`
       }
     } else if ((i == 1 && skills[i] == 1)) {
       if ((modifiers[4] + proficiencyBonus) > 0) {
-        skillDisplay += ` Animal Handling +` + (modifiers[4] + proficiencyBonus) + `,`
+        skillDisplay += ` Animal Handling <b class="roll" onclick="Roll(20, ${(modifiers[4] + proficiencyBonus)}, 'Animal Handling')">+` + (modifiers[4] + proficiencyBonus) + `</b>,`
       }
     } else if ((i == 2 && skills[i] == 1)) {
       if ((modifiers[3] + proficiencyBonus) > 0) {
-        skillDisplay += ` Arcana +` + (modifiers[3] + proficiencyBonus) + `,`
+        skillDisplay += ` Arcana <b class="roll" onclick="Roll(20, ${(modifiers[3] + proficiencyBonus)}, 'Arcana')">+` + (modifiers[3] + proficiencyBonus) + `</b>,`
       }
     } else if ((i == 3 && skills[i] == 1)) {
       if ((modifiers[0] + proficiencyBonus) > 0) {
-        skillDisplay += ` Athletics +` + (modifiers[0] + proficiencyBonus) + `,`
+        skillDisplay += ` Athletics <b class="roll" onclick="Roll(20, ${(modifiers[0] + proficiencyBonus)}, 'Athletics')">+` + (modifiers[0] + proficiencyBonus) + `</b>,`
       }
     } else if ((i == 4 && skills[i] == 1)) {
       if ((modifiers[5] + proficiencyBonus) > 0) {
-        skillDisplay += ` Deception +` + (modifiers[5] + proficiencyBonus) + `,`
+        skillDisplay += ` Deception <b class="roll" onclick="Roll(20, ${(modifiers[5] + proficiencyBonus)}, 'Deception')">+` + (modifiers[5] + proficiencyBonus) + `</b>,`
       }
     } else if ((i == 5 && skills[i] == 1)) {
       if ((modifiers[3] + proficiencyBonus) > 0) {
-        skillDisplay += ` History +` + (modifiers[3] + proficiencyBonus) + `,`
+        skillDisplay += ` History <b class="roll" onclick="Roll(20, ${(modifiers[3] + proficiencyBonus)}, 'History')">+` + (modifiers[3] + proficiencyBonus) + `</b>,`
       }
     } else if ((i == 6 && skills[i] == 1)) {
       if ((modifiers[4] + proficiencyBonus) > 0) {
-        skillDisplay += ` Insight +` + (modifiers[4] + proficiencyBonus) + `,`
+        skillDisplay += ` Insight <b class="roll" onclick="Roll(20, ${(modifiers[4] + proficiencyBonus)}, 'Insight')">+` + (modifiers[4] + proficiencyBonus) + `</b>,`
       }
     } else if ((i == 7 && skills[i] == 1)) {
       if ((modifiers[5] + proficiencyBonus) > 0) {
-        skillDisplay += ` Intimidation +` + (modifiers[5] + proficiencyBonus) + `,`
+        skillDisplay += ` Intimidation <b class="roll" onclick="Roll(20, ${(modifiers[5] + proficiencyBonus)}, 'Intimidation')">+` + (modifiers[5] + proficiencyBonus) + `</b>,`
       }
     } else if ((i == 8 && skills[i] == 1)) {
       if ((modifiers[3] + proficiencyBonus) > 0) {
-        skillDisplay += ` Investigation +` + (modifiers[3] + proficiencyBonus) + `,`
+        skillDisplay += ` Investigation <b class="roll" onclick="Roll(20, ${(modifiers[3] + proficiencyBonus)}, 'Investigation')">+` + (modifiers[3] + proficiencyBonus) + `</b>,`
       }
     } else if ((i == 9 && skills[i] == 1)) {
       if ((modifiers[4] + proficiencyBonus) > 0) {
-        skillDisplay += ` Medicine +` + (modifiers[4] + proficiencyBonus) + `,`
+        skillDisplay += ` Medicine <b class="roll" onclick="Roll(20, ${(modifiers[4] + proficiencyBonus)}, 'Medicine')">+` + (modifiers[4] + proficiencyBonus) + `</b>,`
       }
     } else if ((i == 10 && skills[i] == 1)) {
       if ((modifiers[4] + proficiencyBonus) > 0) {
-        skillDisplay += ` Nature +` + (modifiers[4] + proficiencyBonus) + `,`
+        skillDisplay += ` Nature <b class="roll" onclick="Roll(20, ${(modifiers[4] + proficiencyBonus)}, 'Nature')">+` + (modifiers[4] + proficiencyBonus) + `</b>,`
       }
     } else if ((i == 11 && skills[i] == 1)) {
       if ((modifiers[4] + proficiencyBonus) > 0) {
-        skillDisplay += ` Perception +` + (modifiers[4] + proficiencyBonus) + `,`
+        skillDisplay += ` Perception <b class="roll" onclick="Roll(20, ${(modifiers[4] + proficiencyBonus)}, 'Perception')">+` + (modifiers[4] + proficiencyBonus) + `</b>,`
       }
     } else if ((i == 12 && skills[i] == 1)) {
       if ((modifiers[5] + proficiencyBonus) > 0) {
-        skillDisplay += ` Performance +` + (modifiers[5] + proficiencyBonus) + `,`
+        skillDisplay += ` Performance <b class="roll" onclick="Roll(20, ${(modifiers[5] + proficiencyBonus)}, 'Performance')">+` + (modifiers[5] + proficiencyBonus) + `</b>,`
       }
     } else if ((i == 13 && skills[i] == 1)) {
       if ((modifiers[5] + proficiencyBonus) > 0) {
-        skillDisplay += ` Persuasion +` + (modifiers[5] + proficiencyBonus) + `,`
+        skillDisplay += ` Persuasion <b class="roll" onclick="Roll(20, ${(modifiers[5] + proficiencyBonus)}, 'Persuasion')">+` + (modifiers[5] + proficiencyBonus) + `</b>,`
       }
     } else if ((i == 14 && skills[i] == 1)) {
       if ((modifiers[4] + proficiencyBonus) > 0) {
-        skillDisplay += ` religion +` + (modifiers[4] + proficiencyBonus) + `,`
+        skillDisplay += ` Religion <b class="roll" onclick="Roll(20, ${(modifiers[4] + proficiencyBonus)}, 'Religion')">+` + (modifiers[4] + proficiencyBonus) + `</b>,`
       }
     } else if ((i == 15 && skills[i] == 1)) {
       if ((modifiers[1] + proficiencyBonus) > 0) {
-        skillDisplay += ` Sleight of Hand +` + (modifiers[1] + proficiencyBonus) + `,`
+        skillDisplay += ` Sleight of Hand <b class="roll" onclick="Roll(20, ${(modifiers[1] + proficiencyBonus)}, 'Sleight of Hand')">+` + (modifiers[1] + proficiencyBonus) + `</b>,`
       }
     } else if ((i == 16 && skills[i] == 1)) {
       if ((modifiers[1] + proficiencyBonus) > 0) {
-        skillDisplay += ` Stealth +` + (modifiers[1] + proficiencyBonus) + `,`
+        skillDisplay += ` Stealth <b class="roll" onclick="Roll(20, ${(modifiers[1] + proficiencyBonus)}, 'Stealth')">+` + (modifiers[1] + proficiencyBonus) + `</b>,`
       }
     } else if ((i == 17 && skills[i] == 1)) {
       if ((modifiers[4] + proficiencyBonus) > 0) {
-        skillDisplay += ` Survival +` + (modifiers[4] + proficiencyBonus) + `,`
+        skillDisplay += ` Survival <b class="roll" onclick="Roll(20, ${(modifiers[4] + proficiencyBonus)}, 'Survival')">+` + (modifiers[4] + proficiencyBonus) + `</b>,`
       }
     }
     if (i == skills.length - 1) {
@@ -242,7 +242,12 @@ function SkillDisplay(skills, modifiers, proficiencyBonus) {
   return skillDisplay
 }
 
-function Roll(diceSize, modifier, skillName) {
-  let randomNumber = Math.floor(Math.random() * diceSize) + 1
-  alert(`(1d${diceSize}) ${randomNumber} + (${skillName}) ${modifier} = ${randomNumber + modifier}`)
+function Roll(diceSize, modifier, skillName, attackDiceNumber = 1) {
+  let counter = 0
+  let randomNumber = 0
+  while (counter < attackDiceNumber) {
+    randomNumber += Math.floor(Math.random() * diceSize) + 1 * attackDiceNumber
+    counter++
+  }
+  alert(`(${attackDiceNumber}d${diceSize}) ${randomNumber} + (${skillName}) ${modifier} = ${randomNumber + modifier}`)
 }
