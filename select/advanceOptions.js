@@ -26,6 +26,9 @@ function AdvanceOptions(onOf) {
         <div id="divCha">
             <div id="idCha"></div>
         </div>
+        <div id="divSize">
+            <div id="idSize"></div>
+        </div>
         `
         } else {
             return
@@ -271,6 +274,19 @@ function AdvanceOptions(onOf) {
             </select>
         </div>
 
+        <h3>
+            Creature Size
+        </h3>
+        <div id="divSize">
+            <select id="idSize">
+                <option value="random">Random</option>
+                <option value="Tiny">Tiny</option>
+                <option value="Small">Small</option>
+                <option value="Medium">Medium</option>
+                <option value="Large">Large</option>
+                <option value="Huge">Huge</option>
+            </select>
+        </div>
         `
     }
 }
