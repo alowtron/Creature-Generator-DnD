@@ -112,6 +112,8 @@ button {
 button:hover {
     background-color: grey;
 }
+
+
 /* Main body mobile */
 @media only screen and (max-width: 1000px) {
     main {
