@@ -1,5 +1,5 @@
 //Main class that calls all other function, this class is the only one that is called at the end.
-function Main(idChallengeRating, idCreatureType, idCreatureType2, idSize, idStr, idDex, idCon, idInt, idWis, idCha, idSpecialAbilities1) {
+function Main(idChallengeRating, idCreatureType, idCreatureType2, idSize, idStr, idDex, idCon, idInt, idWis, idCha, idHitPoints, idSpecialAbilities1) {
   //gets the challenge rating for creature
   let challengeRating = ChallengeRating(idChallengeRating)
   //gets the type of the creature'
@@ -17,7 +17,7 @@ function Main(idChallengeRating, idCreatureType, idCreatureType2, idSize, idStr,
   //gets the armor class of the creature
   let armorClass = ArmorClass(creatureType[0], modifiers)
   //gets the hit points of the creature
-  let hitPoints = HitPoints(challengeRating, creatureType[0], creatureSize, modifiers)
+  let hitPoints = HitPoints(challengeRating, creatureType[0], creatureSize, modifiers, idHitPoints)
   //gets the speed of the creature
   let speed = Speed(creatureType, abilityScores)
   //gets proficiencyBonus
@@ -47,6 +47,9 @@ function Display(challengeRating, creatureName, creatureSize, creatureType, alig
   //code to display the skills
   let skillDisplay = SkillDisplay(skills, modifiers, proficiencyBonus)
 
+  //code for displaying hit points
+  let hitPointsDisplay = HitPointsDisplay(hitPoints, challengeRating, modifiers)
+
   //code for adding flight and swim
   let tempSpeedFlyText = TempSpeedFlyText(speed)
   let tempSpeedSwimText = TempSpeedSwimText(speed)
@@ -60,7 +63,7 @@ function Display(challengeRating, creatureName, creatureSize, creatureType, alig
   <p>${creatureSize} ${creatureType}, ${alignment}</p>
   <div class="border"></div>
   <p><b>Armor Class:</b> ${armorClass}</p>
-  <p><b>Hit Points:</b> ${hitPoints[0]} (${challengeRating}d${hitPoints[1] + hitPoints[1]-2}+${modifiers[2] * challengeRating})</p>
+  ${hitPointsDisplay}
   <p><b>Speed:</b> ${speed[0]} ft. ${tempSpeedFlyText}${tempSpeedSwimText}</p>
   <div class="border"></div>
   <div class="displayStats">
@@ -116,6 +119,14 @@ function TempSpeedSwimText(speed) {
     tempSpeedSwimText = ``
   }
   return tempSpeedSwimText
+}
+
+function HitPointsDisplay(hitPoints, challengeRating, modifiers) {
+  if (Array.isArray(hitPoints)) {
+    return `<p><b>Hit Points:</b> ${hitPoints[0]} (${challengeRating}d${hitPoints[1] + hitPoints[1]-2}+${modifiers[2] * challengeRating})</p>`
+  } else {
+    return `<p><b>Hit Points:</b> ${hitPoints} </p>`
+  }
 }
 
 function ModifiersDisplay(modifiers) {

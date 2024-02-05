@@ -29,6 +29,9 @@ function AdvanceOptions(onOf) {
         <div id="divSize">
             <div id="idSize"></div>
         </div>
+        <div id="divHitPoints">
+            <div id="idHitPoints"></div>
+        </div>
         `
         } else {
             return
@@ -287,6 +290,13 @@ function AdvanceOptions(onOf) {
                 <option value="Huge">Huge</option>
             </select>
         </div>
+
+        <label for="idHitPoints">
+            <h3>
+                Hit Points(0 for random)
+            </h3>
+        </label>
+        <input id="idHitPoints" type="number" name="idHitPoints" value="0">
         `
     }
 }

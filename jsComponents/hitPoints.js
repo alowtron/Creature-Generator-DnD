@@ -1,7 +1,9 @@
 //Sets the hit points of the creature based off of the {creatureType[0]}
-function HitPoints(challengeRating, creatureType, creatureSize, modifiers) {
+function HitPoints(challengeRating, creatureType, creatureSize, modifiers, idHitPoints) {
     let hitPoints = [0, 0]
-    if (creatureType == `Beast`) {
+    if (idHitPoints >= 1) {
+        return idHitPoints
+    } else if (creatureType == `Beast`) {
         if (creatureSize == `Tiny`) {
             hitPoints[1] = 3
         } else if (creatureSize == `Small`) {
@@ -15,5 +17,9 @@ function HitPoints(challengeRating, creatureType, creatureSize, modifiers) {
         }
     }
     hitPoints[0] = hitPoints[1] * challengeRating + modifiers[2] * challengeRating
+    if (hitPoints[0] < challengeRating * 8) {
+        tempStorage = challengeRating * 8
+        return tempStorage
+    }
     return hitPoints
 }
