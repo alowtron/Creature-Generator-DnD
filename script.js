@@ -1,5 +1,5 @@
 //Main class that calls all other function, this class is the only one that is called at the end.
-function Main(idChallengeRating, idCreatureType, idCreatureType2, idSize, idStr, idDex, idCon, idInt, idWis, idCha, idHitPoints, idSpecialAbilities1) {
+function Main(idChallengeRating, idCreatureType, idCreatureType2, idSize, idStr, idDex, idCon, idInt, idWis, idCha, idHitPoints, idSpecialAbilities1, idAttackNumber, idAttack1, idAttack2) {
   //gets the challenge rating for creature
   let challengeRating = ChallengeRating(idChallengeRating)
   //gets the type of the creature'
@@ -29,7 +29,7 @@ function Main(idChallengeRating, idCreatureType, idCreatureType2, idSize, idStr,
   //get abilities
   let specialAbilities = SpecialAbilities(challengeRating, creatureType, creatureName, abilityScores, modifiers, speed, idSpecialAbilities1) 
   //get attacks
-  let attacks = Attacks(challengeRating, creatureType, creatureName, creatureSize, modifiers, proficiencyBonus, specialAbilities)
+  let attacks = Attacks(challengeRating, creatureType, creatureName, creatureSize, modifiers, proficiencyBonus, specialAbilities, idAttackNumber, idAttack1, idAttack2)
 
 
   //code to display creature on console

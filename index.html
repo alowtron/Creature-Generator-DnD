@@ -100,31 +100,40 @@
           <option value="random">Random</option>
           <option value="beast">Beast</option>
         </select>
-        
-        <div id="divCreatureType2">
-          <div id="idCreatureType2"></div>
-        </div>
+        <div id="divCreatureCollapse">
+          <div id="divCreatureType2">
+            <div id="idCreatureType2"></div>
+          </div>
 
-        <div id="divCreatureType3">
-          <div id="idCreatureType3"></div>
-        </div>
-        <!-- creature size -->
+          <div id="divCreatureType3">
+            <div id="idCreatureType3"></div>
+          </div>
+          <!-- attack options -->
+          <div id="divAttackNumber">
+            <div id="idAttackNumber"></div>
+          </div>
+          <div id="divAttack1">
+            <div id="idAttack1"></div>
+          </div>
+          <div id="divAttack2">
+            <div id="idAttack2"></div>
+          </div>
 
-        <!-- Current Options:
-          Special Abilities
-          Beast: Charge/Pounce/Flyby -->
-        <div id="divSpecialAbilities1">
-          <div id="idSpecialAbilities1"></div>
-        </div>
-        
-        <div id="divCreatureOption2">
-          <div id="idCreatureOption2"></div>
-        </div>
+          <!-- Current Options:
+            Special Abilities
+            Beast: Charge/Pounce/Flyby -->
+          <div id="divSpecialAbilities1">
+            <div id="idSpecialAbilities1"></div>
+          </div>
+          
+          <div id="divCreatureOption2">
+            <div id="idCreatureOption2"></div>
+          </div>
 
-        <div id="divCreatureOption3">
-          <div id="idCreatureOption3"></div>
+          <div id="divCreatureOption3">
+            <div id="idCreatureOption3"></div>
+          </div>
         </div>
-
         <hr>
         <h3>Challenge Rating</h3>
         
@@ -206,7 +215,7 @@
 
         </div>
         <hr>
-        <button onclick="Main(idChallengeRating.value, idCreatureType.value, idCreatureType2.value, idSize.value, idStr.value, idDex.value, idCon.value, idInt.value, idWis.value, idCha.value, idHitPoints.value, idSpecialAbilities1.value)">
+        <button onclick="Main(idChallengeRating.value, idCreatureType.value, idCreatureType2.value, idSize.value, idStr.value, idDex.value, idCon.value, idInt.value, idWis.value, idCha.value, idHitPoints.value, idSpecialAbilities1.value, idAttackNumber.value, idAttack1.value, idAttack2.value)">
           Generate Creature
         </button>
         <hr>

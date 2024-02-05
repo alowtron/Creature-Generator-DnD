@@ -1,3 +1,14 @@
+#things to do soon
+- Custom Armor Class
+- Custom Attacks
+- Custom Names
+- Custom Speed
+- Custom Skills
+- Custom Attacks Amount
+
+#Then
+- Dragons
+
 #Things to have
 - Names (Temp Done)
 - Alignment (Temp Done)

@@ -1,7 +1,10 @@
-function Attacks(challengeRating, creatureType, creatureName, creatureSize, modifiers, proficiencyBonus, specialAbilities) {
+function Attacks(challengeRating, creatureType, creatureName, creatureSize, modifiers, proficiencyBonus, specialAbilities, idAttackNumber, idAttack1, idAttack2) {
     //attack numbers
     let numberOfAttacks = null
-    if (challengeRating >= 25) {
+    //check to see if a number of attacks have been declared
+    if (idAttackNumber != isNaN) {
+        numberOfAttacks = idAttackNumber
+    } else if (challengeRating >= 25) {
         numberOfAttacks = 6
     } else if (challengeRating >= 20) {
         numberOfAttacks = 5
