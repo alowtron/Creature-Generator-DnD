@@ -43,11 +43,15 @@ function Attacks(challengeRating, creatureType, creatureName, creatureSize, modi
     let attackDiceNumber = 1
     if (creatureSize == "Tiny") {
         attackDice = 4
-        if (challengeRating >= 15) {
+        if (challengeRating >= 25) {
+            attackDiceNumber = 5
+        } else if (challengeRating >= 15) {
+            attackDiceNumber = 4
+        } else if (challengeRating >= 10) {
             attackDiceNumber = 3
-        } else if (challengeRating >= 5) [
+        } else if (challengeRating >= 5) {
             attackDiceNumber = 2
-        ]
+        }
     } else if (creatureSize == "Small") {
         attackDice = 6
         if (challengeRating >= 10) {
