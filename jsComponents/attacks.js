@@ -2,21 +2,27 @@ function Attacks(challengeRating, creatureType, creatureName, creatureSize, modi
     //attack numbers
     let numberOfAttacks = null
     //check to see if a number of attacks have been declared
-    if (idAttackNumber != isNaN) {
+    if (!isNaN(idAttackNumber)) {
         numberOfAttacks = idAttackNumber
-    } else if (challengeRating >= 25) {
-        numberOfAttacks = 6
-    } else if (challengeRating >= 20) {
-        numberOfAttacks = 5
-    } else if (challengeRating >= 15) {
-        numberOfAttacks = 4
-    } else if (challengeRating >= 10) {
-        numberOfAttacks = 3
-    } else if (challengeRating >= 5) {
-        numberOfAttacks = 2
+    } else if (creatureType[0] == 'Beast') {
+        if (challengeRating >= 25) {
+            numberOfAttacks = 6
+        } else if (challengeRating >= 20) {
+            numberOfAttacks = 5
+        } else if (challengeRating >= 15) {
+            numberOfAttacks = 4
+        } else if (challengeRating >= 10) {
+            numberOfAttacks = 3
+        } else if (challengeRating >= 5) {
+            numberOfAttacks = 2
+        } else {
+            numberOfAttacks = 1
+        }
     } else {
         numberOfAttacks = 1
     }
+    
+    
     let numberOfAttacksText = ""
     if (numberOfAttacks > 1) {
         numberOfAttacksText = `<p>The ${creatureName} can make ${numberOfAttacks} attacks.</p>`
@@ -44,32 +50,48 @@ function Attacks(challengeRating, creatureType, creatureName, creatureSize, modi
     if (creatureSize == "Tiny") {
         attackDice = 4
         if (challengeRating >= 25) {
-            attackDiceNumber = 5
+            attackDiceNumber = 7
         } else if (challengeRating >= 15) {
-            attackDiceNumber = 4
+            attackDiceNumber = 5
         } else if (challengeRating >= 10) {
-            attackDiceNumber = 3
+            attackDiceNumber = 4
         } else if (challengeRating >= 5) {
             attackDiceNumber = 2
         }
     } else if (creatureSize == "Small") {
         attackDice = 6
-        if (challengeRating >= 10) {
+        if (challengeRating >= 25) {
+            attackDiceNumber = 5
+        } else if (challengeRating >= 20) {
+            attackDiceNumber = 4
+        } else if (challengeRating >= 15) {
+            attackDiceNumber = 3
+        } else if (challengeRating >= 10) {
             attackDiceNumber = 2
         }
     } else if (creatureSize == "Medium") {
         attackDice = 8
-        if (challengeRating >= 13) {
+        if (challengeRating >= 23) {
+            attackDiceNumber = 4
+        } else if (challengeRating >= 15) {
+            attackDiceNumber = 3
+        } else if (challengeRating >= 11) {
             attackDiceNumber = 2
         }
     } else if (creatureSize == "Large") {
         attackDice = 10
-        if (challengeRating >= 20) {
+        if (challengeRating >= 25) {
+            attackDiceNumber = 4
+        } else if (challengeRating >= 15) {
+            attackDiceNumber = 3
+        } else if (challengeRating >= 10) {
             attackDiceNumber = 2
         }
     } else if (creatureSize == "Huge") {
         attackDice = 12
         if (challengeRating >= 25) {
+            attackDiceNumber = 3
+        } else if (challengeRating >= 12) {
             attackDiceNumber = 2
         }
     } else {
