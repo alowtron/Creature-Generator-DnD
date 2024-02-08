@@ -32,6 +32,9 @@ function AdvanceOptions(onOf) {
         <div id="divHitPoints">
             <div id="idHitPoints"></div>
         </div>
+        <div id="divArmorClass">
+            <div id="idArmorClass"></div>
+        </div>
         `
         } else {
             return
@@ -297,6 +300,13 @@ function AdvanceOptions(onOf) {
             </h3>
         </label>
         <input id="idHitPoints" type="number" name="idHitPoints" value="0">
+
+        <label for="idArmorClass">
+            <h3>
+                Armor Class(0 for random)
+            </h3>
+        </label>
+        <input id="idArmorClass" type="number" name="idArmorClass" value="0">
         `
     }
 }
