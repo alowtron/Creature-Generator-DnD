@@ -215,12 +215,33 @@
           <div id="divArmorClass">
             <div id="idArmorClass"></div>
           </div>
-          
-          
 
         </div>
+
+
+        <!-- Advance Speed Options -->
+        <div id="divAdvanceMoveOptions">
+          <!-- Walking Move Speed -->
+          <div id="divMoveSpeed">
+            <div id="idMoveSpeed"></div>
+          </div>
+        </div>
+
+
+
+
         <hr>
-        <button onclick="Main(idChallengeRating.value, idCreatureType.value, idCreatureType2.value, idSize.value, idStr.value, idDex.value, idCon.value, idInt.value, idWis.value, idCha.value, idArmorClass.value, idHitPoints.value, idSpecialAbilities1.value, idAttackNumber.value, idAttack1.value, idAttack2.value)">
+        <button onclick="Main(idChallengeRating.value, 
+            // Creature Types
+            idCreatureType.value, idCreatureType2.value,
+            idSize.value, 
+            // Modifiers
+            idStr.value, idDex.value, idCon.value, idInt.value, idWis.value, idCha.value, 
+            // Armor Class And Hit Points
+            idArmorClass.value, idHitPoints.value, 
+            idSpecialAbilities1.value, 
+            // Attack Information
+            idAttackNumber.value, idAttack1.value, idAttack2.value)">
           Generate Creature
         </button>
         <hr>

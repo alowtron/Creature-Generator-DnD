@@ -35,6 +35,7 @@ function AdvanceOptions(onOf) {
         <div id="divArmorClass">
             <div id="idArmorClass"></div>
         </div>
+
         `
         } else {
             return
@@ -311,15 +312,58 @@ function AdvanceOptions(onOf) {
         <h3>
             Speed Options
         </h3>
-        <div id="divAdvanceSpeedToggle">
+        <div id="divAdvanceMoveOptionsToggle">
             <button onclick="SpeedOptions(value)" value="false">
                 Toggle Advance Speed Options
             </button>
         </div>
+        
         `
     }
 }
 
-function SpeedOptions() {
+function SpeedOptions(speedOnOF) {
+    if (speedOnOF == true) {
+        let leaveSpeedOptions = window.confirm('Are you sure you want to disable? Speed options selected will be lost.')
+        if (leaveSpeedOptions) {
+            document.getElementById('divAdvanceMoveOptionsToggle').innerHTML = 
+            `
+            <button onclick="SpeedOptions(value)" value="false">
+                Toggle Advance Speed Options
+            </button>
+            `
+            document.getElementById('divAdvanceMoveOptions').innerHTML = 
+            `
+            <div id="divMoveSpeed">
+                <div id="idMoveSpeed"></div>
+            </div>
+            `
+        } else {
+            return
+        }
+        
+    } else {
+        document.getElementById('divAdvanceMoveOptionsToggle').innerHTML = `
+        <button onclick="SpeedOptions(value)" value="true">
+            Toggle Advance Options
+        </button>`
+        document.getElementById('divAdvanceMoveOptions').innerHTML = 
+        `
+        <label for="idMoveSpeed">
+            <h3>
+                Walk Speed(0 for default)
+            </h3>
+        </label>
+        <input id="idMoveSpeed" type="number" name="idMoveSpeed" value="0">
+        
+        <label for="idFlySpeed">
+            <h3>
+                Fly Speed(0 for default)
+            </h3>
+        </label>
+        <input id="idFlySpeed" type="number" name="idFlySpeed" value="0">
 
+        `
+    }
+    
 }
