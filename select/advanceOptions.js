@@ -317,7 +317,6 @@ function AdvanceOptions(onOf) {
             </button>
         </div>
         `
-        document.getElementById('divAdvanceOptions').innerHTML = document.getElementById('outerAdvanceOptions').outerHTML
     }
 }
 
