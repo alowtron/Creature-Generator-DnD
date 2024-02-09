@@ -1,5 +1,4 @@
 #things to do soon
-- Custom Armor Class
 - Custom Attacks
 - Custom Names
 - Custom Speed

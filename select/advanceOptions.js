@@ -307,6 +307,19 @@ function AdvanceOptions(onOf) {
             </h3>
         </label>
         <input id="idArmorClass" type="number" name="idArmorClass" value="0">
+
+        <h3>
+            Speed Options
+        </h3>
+        <div id="divAdvanceSpeedToggle">
+            <button onclick="SpeedOptions(value)" value="false">
+                Toggle Advance Speed Options
+            </button>
+        </div>
         `
     }
+}
+
+function SpeedOptions() {
+
 }
