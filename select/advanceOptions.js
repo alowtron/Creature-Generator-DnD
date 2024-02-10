@@ -355,13 +355,20 @@ function SpeedOptions(speedOnOF) {
             </h3>
         </label>
         <input id="idMoveSpeed" type="number" name="idMoveSpeed" value="0">
-        
+
         <label for="idFlySpeed">
             <h3>
                 Fly Speed(0 for default)
             </h3>
         </label>
         <input id="idFlySpeed" type="number" name="idFlySpeed" value="0">
+
+        <label for="idSwimSpeed">
+            <h3>
+                Swim Speed(0 for default)
+            </h3>
+        </label>
+        <input id="idSwimSpeed" type="number" name"idSwimSpeed" value="0">
 
         `
     }
