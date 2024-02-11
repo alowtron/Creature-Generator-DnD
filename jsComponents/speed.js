@@ -1,6 +1,9 @@
 //Sets the speed of the creature based off of the {creatureType[0] and creatureType[1] and {modifiers[1]}}
-function Speed(creatureType, abilityScores) {
+function Speed(creatureType, abilityScores, idMoveSpeed, idFlySpeed, idSwimSpeed) {
     let speed0 = 0
+    if (idMoveSpeed != 0 || idMoveSpeed != null) {
+        speed0 = idMoveSpeed
+    }
     //used for fly
     let speed1 = 0
     //used for swim

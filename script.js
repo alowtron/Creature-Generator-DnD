@@ -1,5 +1,9 @@
 //Main class that calls all other function, this class is the only one that is called at the end.
-function Main(idChallengeRating, idCreatureType, idCreatureType2, idSize, idStr, idDex, idCon, idInt, idWis, idCha, idArmorClass, idHitPoints, idSpecialAbilities1, idAttackNumber, idAttack1, idAttack2) {
+function Main(idChallengeRating, idCreatureType, idCreatureType2, 
+      idSize, idStr, idDex, idCon, idInt, idWis, idCha, 
+      idArmorClass, idHitPoints, 
+      idMoveSpeed, idFlySpeed, idSwimSpeed,
+      idSpecialAbilities1, idAttackNumber, idAttack1, idAttack2) {
   //gets the challenge rating for creature
   let challengeRating = ChallengeRating(idChallengeRating)
   //gets the type of the creature'
@@ -19,7 +23,7 @@ function Main(idChallengeRating, idCreatureType, idCreatureType2, idSize, idStr,
   //gets the hit points of the creature
   let hitPoints = HitPoints(challengeRating, creatureType[0], creatureSize, modifiers, idHitPoints)
   //gets the speed of the creature
-  let speed = Speed(creatureType, abilityScores)
+  let speed = Speed(creatureType, abilityScores, idMoveSpeed, idFlySpeed, idSwimSpeed)
   //gets proficiencyBonus
   let proficiencyBonus = ProficiencyBonus(challengeRating)
   //gets saving throws
