@@ -1,10 +1,12 @@
 //makes a name base off of the creature type
-function Name(creatureType) {
+function Name(creatureType, idName) {
     //initializes creatures name to blank string
     let creatureName = ``
     //creates creature name based off of its creature type
     //if {creatureType} is Beast
-    if (creatureType == `Beast`) {
+    if (idName != "") {
+        creatureName = idName
+    } else if (creatureType == `Beast`) {
         //list of name vars to build name with
         let nameVarsConst = [`b`, `c`, `d`, `f`, `g`, `h`, `j`, `k`, `l`, `m`, `n`, `p`, `t`]
         let nameVarsVowels = [`a`, `e`, `i`, `o`, `u`]

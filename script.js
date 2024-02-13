@@ -1,5 +1,6 @@
 //Main class that calls all other function, this class is the only one that is called at the end.
 function Main(idChallengeRating, idCreatureType, idCreatureType2, 
+      idName,
       idSize, idStr, idDex, idCon, idInt, idWis, idCha, 
       idArmorClass, idHitPoints, 
       idMoveSpeed, idFlySpeed, idSwimSpeed,
@@ -9,7 +10,7 @@ function Main(idChallengeRating, idCreatureType, idCreatureType2,
   //gets the type of the creature'
   let creatureType = Type(idCreatureType, idCreatureType2)
   //gets a name based off of creature type
-  let creatureName = Name(creatureType[0])
+  let creatureName = Name(creatureType[0], idName)
   //gets the size of the creature based off the creature type
   let creatureSize = Size(creatureType[0], creatureType[1], idSize)
   //gets the alignment of a creature based off the creature type
