@@ -38,7 +38,7 @@ function Main(idChallengeRating, idCreatureType, idCreatureType2,
 
 
   //code to display creature on console
-  Display(challengeRating, creatureName, creatureSize, creatureType[0], alignment, armorClass, hitPoints, speed, abilityScores, modifiers, savingThrows, proficiencyBonus, skills, specialAbilities, attacks)
+  Display(challengeRating, creatureName, creatureSize, creatureType, alignment, armorClass, hitPoints, speed, abilityScores, modifiers, savingThrows, proficiencyBonus, skills, specialAbilities, attacks)
 }
 
 //A function to display what has been generated
@@ -65,7 +65,7 @@ function Display(challengeRating, creatureName, creatureSize, creatureType, alig
   document.getElementById('Creature-Stats').innerHTML = 
   `
   <p><b>Name:</b> ${creatureName}</p>
-  <p>${creatureSize} ${creatureType}, ${alignment}</p>
+  <p>${creatureSize} ${creatureType[0]}${"(" + creatureType[1] + ")"}, ${alignment}</p>
   <div class="border"></div>
   <p><b>Armor Class:</b> ${armorClass}</p>
   ${hitPointsDisplay}
