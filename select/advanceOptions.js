@@ -2,19 +2,15 @@ function AdvanceOptions(onOf) {
     if (onOf == 'true') {
         let leave = window.confirm('Are you sure you want to disable? Options selected will be lost.')
         if (leave) {
+            ModifierOptions(true)
+            SpeedOptions(true)
             document.getElementById('divAdvanceOptionsToggle').innerHTML = `
         <button onclick="AdvanceOptions(value)" value="false">
             Toggle Advance Options
         </button>`
         document.getElementById('divAdvanceOptions').innerHTML =
         `
-        <div id="idStr"></div>
-        <div id="divDex">
-        <div id="idDex"></div>
-        <div id="idCon"></div>
-        <div id="idInt"></div>
-        <div id="idWis"></div>
-        <div id="idCha"></div>
+        
 
         <div id="idSize"></div>
 
@@ -35,7 +31,86 @@ function AdvanceOptions(onOf) {
         </button>`
         document.getElementById('divAdvanceOptions').innerHTML = 
         `
+        <h3>
+            Creature Size
+        </h3>
+        <select id="idSize">
+            <option value="random">Random</option>
+            <option value="Tiny">Tiny</option>
+            <option value="Small">Small</option>
+            <option value="Medium">Medium</option>
+            <option value="Large">Large</option>
+            <option value="Huge">Huge</option>
+        </select>
+
+        <label for="idHitPoints">
+            <h3>
+                Hit Points(0 for random)
+            </h3>
+        </label>
+        <input id="idHitPoints" type="number" name="idHitPoints" value="0">
+
+        <label for="idArmorClass">
+            <h3>
+                Armor Class(0 for random)
+            </h3>
+        </label>
+        <input id="idArmorClass" type="number" name="idArmorClass" value="0">
+
+        <hr>
+
+        <h3>
+            Modifier Options
+        </h3>
+        <div id="divAdvanceModifierOptionsToggle">
+            <button onclick="ModifierOptions(value)" value="false">
+                Toggle Advance Ability Score Options
+            </button>
+        </div>
+
+        <hr>
         
+        <h3>
+            Speed Options
+        </h3>
+        <div id="divAdvanceMoveOptionsToggle">
+            <button onclick="SpeedOptions(value)" value="false">
+                Toggle Advance Speed Options
+            </button>
+        </div>
+        
+        `
+    }
+}
+
+function ModifierOptions(modifierOnOF) {
+    if (modifierOnOF == true) {
+        let leaveModifierOptions = window.confirm('Are you sure you want to disable? Speed options selected will be lost.')
+        if (leaveModifierOptions) {
+            document.getElementById('divAdvanceModifierOptionsToggle').innerHTML = 
+            `
+            <button onclick="ModifierOptions(value)" value="false">
+                Toggle Advance Ability Score Options
+            </button>
+            `
+            document.getElementById('divAdvanceModifierOptions').innerHTML = 
+            `
+            <div id="idStr"></div>
+            <div id="idDex"></div>
+            <div id="idCon"></div>
+            <div id="idInt"></div>
+            <div id="idWis"></div>
+            <div id="idCha"></div>
+            `
+        } else {
+            return
+        }
+        
+    } else {
+        document.getElementById('divAdvanceModifierOptionsToggle').innerHTML = `
+        <button onclick="SpeedOptions(value)" value="true">
+            Toggle Advance Ability Score Options
+        </button>
         <!-- Modifiers for six core stats -->
         <h3>
             Strength
@@ -262,45 +337,14 @@ function AdvanceOptions(onOf) {
             <option value="29">29</option>
             <option value="30">30</option>
         </select>
-
-
-        <h3>
-            Creature Size
-        </h3>
-        <select id="idSize">
-            <option value="random">Random</option>
-            <option value="Tiny">Tiny</option>
-            <option value="Small">Small</option>
-            <option value="Medium">Medium</option>
-            <option value="Large">Large</option>
-            <option value="Huge">Huge</option>
-        </select>
-
-        <label for="idHitPoints">
-            <h3>
-                Hit Points(0 for random)
-            </h3>
-        </label>
-        <input id="idHitPoints" type="number" name="idHitPoints" value="0">
-
-        <label for="idArmorClass">
-            <h3>
-                Armor Class(0 for random)
-            </h3>
-        </label>
-        <input id="idArmorClass" type="number" name="idArmorClass" value="0">
-
-        <h3>
-            Speed Options
-        </h3>
-        <div id="divAdvanceMoveOptionsToggle">
-            <button onclick="SpeedOptions(value)" value="false">
-                Toggle Advance Speed Options
-            </button>
-        </div>
+        `
+        document.getElementById('divAdvanceModifierOptions').innerHTML = 
+        `
         
+
         `
     }
+    
 }
 
 function SpeedOptions(speedOnOF) {
@@ -315,9 +359,11 @@ function SpeedOptions(speedOnOF) {
             `
             document.getElementById('divAdvanceMoveOptions').innerHTML = 
             `
-            <div id="divMoveSpeed">
-                <div id="idMoveSpeed"></div>
-            </div>
+            
+            <div id="idMoveSpeed"></div>
+            <div id="idFlySpeed"></div>
+            <div id="idSwimSpeed"></div>
+            
             `
         } else {
             return
@@ -327,9 +373,7 @@ function SpeedOptions(speedOnOF) {
         document.getElementById('divAdvanceMoveOptionsToggle').innerHTML = `
         <button onclick="SpeedOptions(value)" value="true">
             Toggle Advance Options
-        </button>`
-        document.getElementById('divAdvanceMoveOptions').innerHTML = 
-        `
+        </button>
         <label for="idMoveSpeed">
             <h3>
                 Walk Speed(0 for default)
@@ -350,7 +394,9 @@ function SpeedOptions(speedOnOF) {
             </h3>
         </label>
         <input id="idSwimSpeed" type="number" name"idSwimSpeed" value="0">
-
+        `
+        document.getElementById('divAdvanceMoveOptions').innerHTML = 
+        `
         `
     }
     

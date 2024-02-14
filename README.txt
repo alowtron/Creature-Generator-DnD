@@ -1,7 +1,5 @@
 #things to do soon
 - Custom Attacks
-- Custom Names
-- Custom Speed
 - Custom Skills
 - Custom Attacks Amount
 
