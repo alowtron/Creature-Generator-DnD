@@ -1,7 +1,6 @@
 #things to do soon
 - Custom Attacks
 - Custom Skills
-- Custom Attacks Amount
 
 #Then
 - Dragons

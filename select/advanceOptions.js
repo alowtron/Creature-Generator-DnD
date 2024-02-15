@@ -17,6 +17,8 @@ function AdvanceOptions(onOf) {
         <div id="idHitPoints"></div>
         <div id="idArmorClass"></div>
 
+        <div id="idAttackNumber"></div>
+
 
         `
         } else {
@@ -56,6 +58,21 @@ function AdvanceOptions(onOf) {
             </h3>
         </label>
         <input id="idArmorClass" type="number" name="idArmorClass" value="0">
+
+        <h3>
+            Number of Attacks
+        </h3>
+        <select id="idAttackNumber">
+            <option value="default">Default</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+        </select>
+
+        </div>
 
         <hr>
 

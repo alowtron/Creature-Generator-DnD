@@ -93,7 +93,11 @@ function Display(challengeRating, creatureName, creatureSize, creatureType, alig
   ${attacks[0]}
   ${attacksDisplay}
   
+  <button onclick="openInWindow()">
+    Open in New Window
+  </button>
   `
+
 }
 
 function AttacksDisplay(attacks) {
@@ -266,4 +270,76 @@ function Roll(diceSize, modifier, skillName, attackDiceNumber = 1) {
     counter++
   }
   alert(`(${attackDiceNumber}d${diceSize}) ${randomNumber} + (${skillName}) ${modifier} = ${randomNumber + modifier}`)
+}
+
+function openInWindow() {
+  let content = 
+  `
+  <link href="styles.css" rel="stylesheet" type="text/css" />
+  <style>
+    .display {
+      width: 425px;
+      margin: auto;
+    }
+    .creatureDisplay {
+      width: 425px;
+      margin: auto;
+      
+    }
+    .displayStats {
+      margin-top: -5px;
+      margin-bottom: 33px;
+      display: grid;
+      grid-template-columns: 70px 70px 70px 70px 70px 70px;
+      grid-template-rows: 30px 30px;
+      justify-items: center;
+    }
+    .border {
+      margin-top: -10px;
+      margin-bottom: -10px;
+      border-bottom: solid;
+      border-color: silver;
+    }
+    hr {
+      border-color: silver;
+      border-bottom: solid;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    .roll {
+      /* color: white; */
+      text-decoration: underline;
+    }
+
+    .roll:hover {
+      cursor: pointer;
+      color: #5c77a1;
+    }
+
+    select {
+      background-color: silver;
+      height: 30px;
+      width: 100px;
+      border-radius: 0.3rem;
+      /* display: block;
+      margin: auto;
+      text-align: center; */
+    }
+    input {
+      
+      height: 24px;
+      border-radius: 0.3rem;
+      font-size: 15px;
+      width: 90px;
+      background-color: silver;
+    }
+  </style>
+  `
+  
+  content += document.getElementById('Creature-Stats').innerHTML
+  
+  let newWindow = window.open('', '_blank', 'width=450, height=750')
+  newWindow.document.body.innerHTML = content
+  window.open
 }
