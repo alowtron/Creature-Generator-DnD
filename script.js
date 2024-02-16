@@ -308,7 +308,6 @@ function openInWindow() {
     }
 
     .roll {
-      /* color: white; */
       text-decoration: underline;
     }
 
@@ -322,9 +321,6 @@ function openInWindow() {
       height: 30px;
       width: 100px;
       border-radius: 0.3rem;
-      /* display: block;
-      margin: auto;
-      text-align: center; */
     }
     input {
       
