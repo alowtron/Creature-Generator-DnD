@@ -1,6 +1,8 @@
 #things to do soon
-- Custom Attacks
 - Custom Skills
+- Downloads
+  - .txt
+  - .json
 
 #Then
 - Dragons

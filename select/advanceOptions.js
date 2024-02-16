@@ -72,6 +72,16 @@ function AdvanceOptions(onOf) {
             <option value="6">6</option>
         </select>
 
+
+        <hr>
+
+        <h3>
+            Custom Attack Options
+        </h3>
+        <div id="divAdvanceAttackOptionsToggle">
+            <button onclick="AttackOptions(value)" value="false">
+                Toggle Custom Attack Options
+            </button>
         </div>
 
         <hr>
@@ -413,6 +423,108 @@ function SpeedOptions(speedOnOF) {
         <input id="idSwimSpeed" type="number" name"idSwimSpeed" value="0">
         `
         document.getElementById('divAdvanceMoveOptions').innerHTML = 
+        `
+        `
+    }
+    
+}
+
+function AttackOptions(attackOnOF) {
+    if (attackOnOF == true) {
+        let leaveAttackOptions = window.confirm('Are you sure you want to disable? Speed options selected will be lost.')
+        if (leaveAttackOptions) {
+            document.getElementById('divAdvanceAttackOptionsToggle').innerHTML = 
+            `
+            <button onclick="AttackOptions(value)" value="false">
+                Toggle Advance Attack Options
+            </button>
+            `
+            document.getElementById('divAdvanceAttackOptions').innerHTML = 
+            `
+            <div id="idAttackName"></div>
+            <div id="idAttackRange"></div>
+            <div id="idAttackDice"></div>
+            <div id="idAttackDiceNumber"></div>
+            <div id="idAttackDamageType"></div>
+            
+            `
+        } else {
+            return
+        }
+        
+    } else {
+        document.getElementById('divAdvanceAttackOptionsToggle').innerHTML = `
+        <button onclick="AttackOptions(value)" value="true">
+            Toggle Advance Options
+        </button>
+
+        
+
+        <hr>
+        <h3>
+            Custom Attack Input
+        </h3>
+
+        <label for="idAttackName">
+            <h3>
+                Name of Attack
+            </h3>
+        </label>
+        <input id="idAttackName" type="text" name="idAttackName" value=""> 
+
+        
+        <h3>
+            Attack Dice Size(Example 6 sided)
+        </h3>
+        <select id="idAttackDice">
+            <option value="4">4</option>
+            <option value="6" selected>6</option>
+            <option value="8">8</option>
+            <option value="10">10</option>
+            <option value="12">12</option>
+            <option value="20">20</option>
+        </select>
+        
+        <h3>
+            Number of Attack Dice
+        </h3>
+        <select id="idAttackDiceNumber">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+        </select>
+
+
+        <label for="idAttackRange">
+            <h3>
+                Attack Range
+            </h3>
+        </label>
+        <input id="idAttackRange" type="number" name="idAttackRange" value="5">
+
+        <h3>
+            Type of Attack Damage
+        </h3>
+        <select id="idAttackDamageType">
+            <option value="slashing">Slashing</option>
+            <option value="piercing">Piercing</option>
+            <option value="bludgeoning">Bludgeoning</option>
+        </select>
+
+        `
+        document.getElementById('divAdvanceAttackOptions').innerHTML = 
         `
         `
     }

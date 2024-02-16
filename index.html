@@ -96,13 +96,7 @@
             <div id="idCreatureType3"></div>
           </div>
           <!-- attack options -->
-          
-          <div id="divAttack1">
-            <div id="idAttack1"></div>
-          </div>
-          <div id="divAttack2">
-            <div id="idAttack2"></div>
-          </div>
+        
 
           <!-- Current Options:
             Special Abilities
@@ -120,7 +114,9 @@
           </div>
         </div>
         <hr>
-        <h3>Challenge Rating</h3>
+        <h3>
+          Challenge Rating
+        </h3>
         
         <select id="idChallengeRating" title="idChallengeRating">
           <option value="random">Random</option>
@@ -186,6 +182,13 @@
           <!-- Number of attacks -->
           <div id="idAttackNumber"></div>
         </div>
+        <div id="divAdvanceAttackOptions">
+          <div id="idAttackName"></div>
+          <div id="idAttackRange"></div>
+          <div id="idAttackDice"></div>
+          <div id="idAttackDiceNumber"></div>
+          <div id="idAttackDamageType"></div>
+        </div>
 
         <div id="divAdvanceModifierOptions">
           <!-- Modifiers for six core stats -->
@@ -204,7 +207,6 @@
           <div id="idMoveSpeed"></div>
           <div id="idFlySpeed"></div>
           <div id="idSwimSpeed"></div>
-
         </div>
         
 
@@ -225,7 +227,7 @@
             idMoveSpeed.value, idFlySpeed.value, idSwimSpeed.value,
             idSpecialAbilities1.value, 
             // Attack Information
-            idAttackNumber.value, idAttack1.value, idAttack2.value)">
+            idAttackName.value, idAttackNumber.value, idAttackRange.value, idAttackDice.value, idAttackDiceNumber.value, idAttackDamageType.value)">
           Generate Creature
         </button>
         <hr>

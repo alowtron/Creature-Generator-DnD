@@ -4,7 +4,9 @@ function Main(idChallengeRating, idCreatureType, idCreatureType2,
       idSize, idStr, idDex, idCon, idInt, idWis, idCha, 
       idArmorClass, idHitPoints, 
       idMoveSpeed, idFlySpeed, idSwimSpeed,
-      idSpecialAbilities1, idAttackNumber, idAttack1, idAttack2) {
+      idSpecialAbilities1, 
+      idAttackName, idAttackNumber, idAttackRange, idAttackDice, idAttackDiceNumber, idAttackDamageType
+      ) {
   //gets the challenge rating for creature
   let challengeRating = ChallengeRating(idChallengeRating)
   //gets the type of the creature'
@@ -34,7 +36,7 @@ function Main(idChallengeRating, idCreatureType, idCreatureType2,
   //get abilities
   let specialAbilities = SpecialAbilities(challengeRating, creatureType, creatureName, abilityScores, modifiers, speed, idSpecialAbilities1) 
   //get attacks
-  let attacks = Attacks(challengeRating, creatureType, creatureName, creatureSize, modifiers, proficiencyBonus, specialAbilities, idAttackNumber, idAttack1, idAttack2)
+  let attacks = Attacks(challengeRating, creatureType, creatureName, creatureSize, modifiers, proficiencyBonus, specialAbilities, idAttackName, idAttackNumber, idAttackRange, idAttackDice, idAttackDiceNumber, idAttackDamageType)
 
 
   //code to display creature on console

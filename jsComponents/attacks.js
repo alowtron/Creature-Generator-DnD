@@ -1,4 +1,4 @@
-function Attacks(challengeRating, creatureType, creatureName, creatureSize, modifiers, proficiencyBonus, specialAbilities, idAttackNumber, idAttack1, idAttack2) {
+function Attacks(challengeRating, creatureType, creatureName, creatureSize, modifiers, proficiencyBonus, specialAbilities, idAttackName, idAttackNumber, idAttackRange, idAttackDice, idAttackDiceNumber, idAttackDamageType) {
     //attack numbers
     let numberOfAttacks = null
     //check to see if a number of attacks have been declared
@@ -96,6 +96,10 @@ function Attacks(challengeRating, creatureType, creatureName, creatureSize, modi
         }
     } else {
         attackDice = 20
+    }
+    if (idAttackName != null && idAttackName != "") {
+        attacksText[attacksTextPos] = `<p><b>${idAttackName}: </b> <b class="roll" onclick="Roll(20, ${attackToHit}, 'Bite')">+${attackToHit}</b> to hit, range: ${idAttackRange} ft., <b class="roll" onclick="Roll(${idAttackDice}, ${modifierDamage}, 'Modifier', ${idAttackDiceNumber})">${idAttackDiceNumber}d${idAttackDice}+${modifierDamage}</b> ${idAttackDamageType} damage. </p>`
+            attacksTextPos++
     }
     //parse {specialAbilities[1]}
     for (let i = 0; i <= specialAbilities.length; i++) {
