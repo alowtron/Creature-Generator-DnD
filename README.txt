@@ -2,7 +2,8 @@
 - Custom Skills
 - Downloads
   - .txt
-  - .json
+  - .html
+  - in browser
 
 #Then
 - Dragons
